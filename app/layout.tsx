@@ -43,21 +43,12 @@ export const metadata: Metadata = {
     title: "withlukas | AI-Powered Automation & App Development",
     description:
       "Custom automation tools, AI-powered apps, and sales technology. Making work and life more efficient.",
-    images: [
-      {
-        url: "/og-image.png",
-        width: 1200,
-        height: 630,
-        alt: "withlukas — Automation & App Development",
-      },
-    ],
   },
   twitter: {
     card: "summary_large_image",
     title: "withlukas | AI-Powered Automation & App Development",
     description:
       "Custom automation tools, AI-powered apps, and sales technology built by Lamin Traoré.",
-    images: ["/og-image.png"],
   },
   robots: {
     index: true,

@@ -104,15 +104,30 @@ const projects: Project[] = [
     name: "Dr. Paulina Kaiser",
     tagline: "Professional medical web presence",
     description:
-      "Bilingual (EN/DE) professional website for a physician. SEO-optimized with referral forms, blog system, structured data, and Vercel hosting. Built with Next.js and Tailwind.",
-    category: "App Development",
+      "Bilingual (EN/DE) professional website for a physician. Full technical SEO, referral forms, blog system, structured data, and Vercel hosting. Built with Next.js and Tailwind.",
+    category: "SEO & Web",
     tags: ["Next.js", "SEO", "Bilingual", "Healthcare"],
     status: "live",
     link: "https://paulinakaiser.com",
     highlights: [
-      "Complete SEO: sitemap, robots, JSON-LD schemas, OG images",
+      "Complete SEO: sitemap, robots, JSON-LD schemas, OG images, 301 redirects",
       "Resend email integration for referral form routing",
       "Blog with SVG gradient cover images in English and German",
+    ],
+  },
+  {
+    name: "withlukas.com",
+    tagline: "This site — SEO-first portfolio",
+    description:
+      "Dark-mode portfolio and services site with full technical SEO. Dynamic OG image generation, JSON-LD structured data, sitemap, and optimized metadata. Deployed on Vercel with custom domain.",
+    category: "SEO & Web",
+    tags: ["Next.js", "SEO", "JSON-LD", "OG Images"],
+    status: "live",
+    link: "https://withlukas.com",
+    highlights: [
+      "Dynamic OG image generation via Next.js ImageResponse",
+      "JSON-LD graph: Organization, WebSite, WebPage, ProfessionalService",
+      "Automatic sitemap.xml and robots.txt generation",
     ],
   },
   {
@@ -131,7 +146,7 @@ const projects: Project[] = [
   },
 ];
 
-const categories = ["All", "Sales Tools", "App Development", "Workflow Automation"];
+const categories = ["All", "Sales Tools", "App Development", "SEO & Web", "Workflow Automation"];
 
 /* ── Status Badge ─────────────────────────────────────────── */
 
@@ -226,9 +241,82 @@ function ServiceCard({ icon, title, description }: { icon: string; title: string
 
 /* ── Main Page ────────────────────────────────────────────── */
 
+const jsonLd = {
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Organization",
+      "@id": "https://withlukas.com/#organization",
+      name: "withlukas",
+      url: "https://withlukas.com",
+      logo: "https://withlukas.com/icon.svg",
+      founder: {
+        "@type": "Person",
+        name: "Lamin Traoré",
+        jobTitle: "Owner & Operator",
+        address: {
+          "@type": "PostalAddress",
+          addressLocality: "Atlanta",
+          addressRegion: "GA",
+          addressCountry: "US",
+        },
+      },
+      description:
+        "Custom AI-powered automation tools, app development, sales technology, and SEO services. Making work and life more efficient.",
+      knowsAbout: [
+        "Sales Automation",
+        "App Development",
+        "AI Integration",
+        "SEO",
+        "Workflow Automation",
+        "Email Outreach",
+        "Performance Tracking",
+        "Algorithmic Trading",
+      ],
+      areaServed: ["United States", "Germany"],
+    },
+    {
+      "@type": "WebSite",
+      "@id": "https://withlukas.com/#website",
+      url: "https://withlukas.com",
+      name: "withlukas",
+      publisher: { "@id": "https://withlukas.com/#organization" },
+    },
+    {
+      "@type": "WebPage",
+      "@id": "https://withlukas.com/#webpage",
+      url: "https://withlukas.com",
+      name: "withlukas | AI-Powered Automation & App Development",
+      isPartOf: { "@id": "https://withlukas.com/#website" },
+      about: { "@id": "https://withlukas.com/#organization" },
+      description:
+        "Custom automation tools, AI-powered apps, sales technology, and SEO services built by Lamin Traoré. From email outreach engines to algorithmic trading bots.",
+    },
+    {
+      "@type": "ProfessionalService",
+      "@id": "https://withlukas.com/#service",
+      name: "withlukas",
+      provider: { "@id": "https://withlukas.com/#organization" },
+      areaServed: ["United States", "Germany"],
+      serviceType: [
+        "Sales Automation",
+        "Custom App Development",
+        "AI Integration",
+        "SEO Optimization",
+        "Workflow Automation",
+      ],
+      url: "https://withlukas.com",
+    },
+  ],
+};
+
 export default function Home() {
   return (
     <main className="grid-bg">
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+      />
       {/* Navigation */}
       <nav className="fixed top-0 left-0 right-0 z-50 bg-[var(--background)]/80 backdrop-blur-xl border-b border-[var(--card-border)]">
         <div className="max-w-6xl mx-auto px-6 h-14 flex items-center justify-between">
@@ -275,7 +363,7 @@ export default function Home() {
       {/* Stats */}
       <section className="py-12 px-6 border-y border-[var(--card-border)]">
         <div className="max-w-4xl mx-auto grid grid-cols-2 md:grid-cols-4 gap-8">
-          <StatCard value="8+" label="Tools Built" />
+          <StatCard value="9+" label="Tools Built" />
           <StatCard value="18+" label="Data Sources" />
           <StatCard value="1000s" label="Hours Saved" />
           <StatCard value="2" label="Countries" />
@@ -328,7 +416,7 @@ export default function Home() {
             </p>
           </div>
 
-          <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-4">
+          <div className="grid sm:grid-cols-2 lg:grid-cols-5 gap-4">
             <ServiceCard
               icon="&#9889;"
               title="Sales Automation"
@@ -343,6 +431,11 @@ export default function Home() {
               icon="&#129302;"
               title="AI Integration"
               description="Smart classification, scoring, evaluation, and content generation. AI that does the heavy lifting while you make the decisions."
+            />
+            <ServiceCard
+              icon="&#128270;"
+              title="SEO & Web Presence"
+              description="Technical SEO, structured data, sitemap generation, OG images, and bilingual content. Get found by the right people on Google."
             />
             <ServiceCard
               icon="&#9881;"
