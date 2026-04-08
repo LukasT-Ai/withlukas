@@ -19,7 +19,7 @@ export const metadata: Metadata = {
     template: "%s | withlukas",
   },
   description:
-    "Custom automation tools, AI-powered apps, and sales technology built by Lukas Traoré. From email outreach engines to algorithmic trading bots — making work and life more efficient.",
+    "Custom automation tools, AI-powered apps, and sales technology built by Lamin Traoré. From email outreach engines to algorithmic trading bots — making work and life more efficient.",
   keywords: [
     "automation",
     "AI tools",
@@ -31,10 +31,10 @@ export const metadata: Metadata = {
     "algorithmic trading",
     "custom software",
     "withlukas",
-    "Lukas Traoré",
+    "Lamin Traoré",
   ],
-  authors: [{ name: "Lukas Traoré", url: "https://withlukas.com" }],
-  creator: "Lukas Traoré",
+  authors: [{ name: "Lamin Traoré", url: "https://withlukas.com" }],
+  creator: "Lamin Traoré",
   openGraph: {
     type: "website",
     locale: "en_US",
@@ -56,7 +56,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "withlukas | AI-Powered Automation & App Development",
     description:
-      "Custom automation tools, AI-powered apps, and sales technology built by Lukas Traoré.",
+      "Custom automation tools, AI-powered apps, and sales technology built by Lamin Traoré.",
     images: ["/og-image.png"],
   },
   robots: {

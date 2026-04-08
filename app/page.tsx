@@ -385,8 +385,8 @@ export default function Home() {
             </div>
             <div className="space-y-4 text-zinc-400 leading-relaxed">
               <p>
-                <strong className="text-[var(--foreground)]">Lukas Traor&eacute;</strong> is the owner and operator of withlukas.
-                Based in Atlanta, GA with deep ties to Germany, Lukas builds automation
+                <strong className="text-[var(--foreground)]">Lamin Traor&eacute;</strong> is the owner and operator of withlukas.
+                Based in Atlanta, GA with deep ties to Germany, Lamin builds automation
                 tools that solve real problems across sales, career management, healthcare,
                 finance, and operations.
               </p>
