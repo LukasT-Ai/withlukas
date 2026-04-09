@@ -12,13 +12,13 @@ export default function sitemap(): MetadataRoute.Sitemap {
 
   return [
     {
-      url: "https://withlukas.com",
+      url: "https://www.withlukas.com",
       lastModified: new Date(),
       changeFrequency: "weekly",
       priority: 1,
     },
     ...services.map((slug) => ({
-      url: `https://withlukas.com/services/${slug}`,
+      url: `https://www.withlukas.com/services/${slug}`,
       lastModified: new Date(),
       changeFrequency: "monthly" as const,
       priority: 0.8,
