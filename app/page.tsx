@@ -486,7 +486,7 @@ export default function Home() {
             </div>
             <div className="space-y-4 text-zinc-400 leading-relaxed">
               <p>
-                <strong className="text-[var(--foreground)]">Lamin Traor&eacute;</strong> is the owner and operator of withlukas.
+                <a href="https://www.lamintraore.com" target="_blank" rel="noopener noreferrer" className="text-[var(--foreground)] hover:text-blue-400 transition-colors"><strong>Lamin Traor&eacute;</strong></a> is the owner and operator of withlukas.
                 Based in Atlanta, GA with deep ties to Germany, Lamin builds automation
                 tools that solve real problems across sales, career management, healthcare,
                 finance, and operations.
@@ -505,6 +505,7 @@ export default function Home() {
               </p>
               <p className="text-sm text-zinc-500">
                 Operating across the US and German markets. Bilingual (EN/DE).
+                <a href="https://www.lamintraore.com" target="_blank" rel="noopener noreferrer" className="text-blue-500 hover:text-blue-400 ml-1">lamintraore.com &rarr;</a>
               </p>
             </div>
           </div>
