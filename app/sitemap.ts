@@ -17,6 +17,12 @@ export default function sitemap(): MetadataRoute.Sitemap {
       changeFrequency: "weekly",
       priority: 1,
     },
+    {
+      url: "https://www.withlukas.com/pricing",
+      lastModified: new Date(),
+      changeFrequency: "monthly",
+      priority: 0.9,
+    },
     ...services.map((slug) => ({
       url: `https://www.withlukas.com/services/${slug}`,
       lastModified: new Date(),
