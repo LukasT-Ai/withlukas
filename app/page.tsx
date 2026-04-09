@@ -1,4 +1,6 @@
 import Link from "next/link";
+import Navbar from "./components/navbar";
+import Footer from "./components/footer";
 
 /* ── Project Data ─────────────────────────────────────────── */
 
@@ -229,13 +231,14 @@ function StatCard({ value, label }: { value: string; label: string }) {
 
 /* ── Service Card ─────────────────────────────────────────── */
 
-function ServiceCard({ icon, title, description }: { icon: string; title: string; description: string }) {
+function ServiceCard({ icon, title, description, href }: { icon: string; title: string; description: string; href: string }) {
   return (
-    <div className="bg-[var(--card)] border border-[var(--card-border)] rounded-xl p-5 hover:bg-[var(--card-hover)] transition-all duration-300">
+    <Link href={href} className="bg-[var(--card)] border border-[var(--card-border)] rounded-xl p-5 hover:bg-[var(--card-hover)] transition-all duration-300 group block">
       <div className="text-2xl mb-3">{icon}</div>
-      <h3 className="text-sm font-semibold text-[var(--foreground)] mb-2">{title}</h3>
+      <h3 className="text-sm font-semibold text-[var(--foreground)] mb-2 group-hover:text-blue-400 transition-colors">{title}</h3>
       <p className="text-xs text-zinc-400 leading-relaxed">{description}</p>
-    </div>
+      <span className="text-[10px] text-blue-500 mt-3 inline-block group-hover:text-blue-400">Learn more &rarr;</span>
+    </Link>
   );
 }
 
@@ -326,23 +329,7 @@ export default function Home() {
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
       />
-      {/* Navigation */}
-      <nav className="fixed top-0 left-0 right-0 z-50 bg-[var(--background)]/80 backdrop-blur-xl border-b border-[var(--card-border)]">
-        <div className="max-w-6xl mx-auto px-6 h-14 flex items-center justify-between">
-          <Link href="/" className="font-semibold text-[var(--foreground)] tracking-tight">
-            with<span className="text-blue-500">lukas</span>
-          </Link>
-          <div className="flex items-center gap-6 text-sm">
-            <a href="#work" className="text-zinc-500 hover:text-[var(--foreground)] transition-colors">Work</a>
-            <a href="#services" className="text-zinc-500 hover:text-[var(--foreground)] transition-colors">Services</a>
-            <a href="#telecom" className="text-zinc-500 hover:text-[var(--foreground)] transition-colors">Telecom</a>
-            <a href="#about" className="text-zinc-500 hover:text-[var(--foreground)] transition-colors">About</a>
-            <a href="#contact" className="bg-blue-500 hover:bg-blue-400 text-white px-4 py-1.5 rounded-lg text-xs font-medium transition-colors">
-              Get in Touch
-            </a>
-          </div>
-        </div>
-      </nav>
+      <Navbar />
 
       {/* Hero */}
       <section className="pt-32 pb-20 px-6">
@@ -426,110 +413,43 @@ export default function Home() {
             </p>
           </div>
 
-          <div className="grid sm:grid-cols-2 lg:grid-cols-5 gap-4">
+          <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-4">
+            <ServiceCard
+              icon="&#128222;"
+              title="Telecom Consulting"
+              description="Voice, data, network, and security advisory. 15+ years inside AT&T and Spectrum Enterprise — now helping businesses make smarter infrastructure decisions."
+              href="/services/telecom-consulting"
+            />
             <ServiceCard
               icon="&#9889;"
               title="Sales Automation"
               description="Email outreach engines, follow-up sequences, response classification, CRM dashboards. Turn prospecting into a system, not a chore."
+              href="/services/sales-automation"
             />
             <ServiceCard
               icon="&#128187;"
               title="App Development"
               description="Full-stack web apps, dashboards, and tools built with modern frameworks. Next.js, React, Node.js, TypeScript — production-ready from day one."
+              href="/services/app-development"
             />
             <ServiceCard
               icon="&#129302;"
               title="AI Integration"
               description="Smart classification, scoring, evaluation, and content generation. AI that does the heavy lifting while you make the decisions."
+              href="/services/ai-integration"
             />
             <ServiceCard
               icon="&#128270;"
               title="SEO & Web Presence"
               description="Technical SEO, structured data, sitemap generation, OG images, and bilingual content. Get found by the right people on Google."
+              href="/services/seo-web-presence"
             />
             <ServiceCard
               icon="&#9881;"
               title="Workflow Automation"
               description="Microsoft Forms, Power Automate, Excel/VBA, cron jobs, and custom pipelines. Connect your tools and eliminate manual data entry."
+              href="/services/workflow-automation"
             />
-          </div>
-        </div>
-      </section>
-
-      {/* Telecom Consulting */}
-      <section id="telecom" className="py-20 px-6 border-t border-[var(--card-border)]">
-        <div className="max-w-6xl mx-auto">
-          <div className="text-center mb-12">
-            <h2 className="text-3xl font-bold mb-3">Telecom Strategy, Without the Sales Pitch</h2>
-            <p className="text-zinc-400 max-w-2xl mx-auto">
-              15+ years advising enterprises on voice, data, network, and security &mdash;
-              now helping businesses make smarter infrastructure decisions.
-            </p>
-          </div>
-
-          <div className="bg-[var(--card)] border border-[var(--card-border)] rounded-2xl p-8 md:p-10 mb-10">
-            <p className="text-zinc-400 leading-relaxed max-w-3xl mx-auto text-center">
-              Most telecom decisions are made based on a carrier&apos;s pitch, not your business needs.
-              I&apos;ve spent over a decade on the inside &mdash; designing UC architectures at Spectrum Enterprise,
-              engineering MPLS and VoIP solutions at AT&amp;T, and managing enterprise accounts across
-              connectivity, security, cloud, and voice. I help businesses cut through vendor noise
-              and make infrastructure decisions that actually fit.
-            </p>
-          </div>
-
-          <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-4 mb-12">
-            <div className="bg-[var(--card)] border border-[var(--card-border)] rounded-xl p-5 hover:bg-[var(--card-hover)] transition-all duration-300">
-              <div className="text-2xl mb-3">&#128222;</div>
-              <h3 className="text-sm font-semibold text-[var(--foreground)] mb-2">Voice &amp; Unified Communications</h3>
-              <p className="text-xs text-zinc-400 leading-relaxed">
-                Audit your current phone systems, evaluate UCaaS and hosted PBX options, and design
-                a migration path that minimizes downtime and cost. From legacy PRI to modern cloud voice.
-              </p>
-            </div>
-            <div className="bg-[var(--card)] border border-[var(--card-border)] rounded-xl p-5 hover:bg-[var(--card-hover)] transition-all duration-300">
-              <div className="text-2xl mb-3">&#127760;</div>
-              <h3 className="text-sm font-semibold text-[var(--foreground)] mb-2">Network &amp; Connectivity</h3>
-              <p className="text-xs text-zinc-400 leading-relaxed">
-                MPLS, SD-WAN, Ethernet, dedicated internet &mdash; right-size your WAN,
-                eliminate redundant circuits, and negotiate contracts that don&apos;t lock you into bad terms.
-              </p>
-            </div>
-            <div className="bg-[var(--card)] border border-[var(--card-border)] rounded-xl p-5 hover:bg-[var(--card-hover)] transition-all duration-300">
-              <div className="text-2xl mb-3">&#128274;</div>
-              <h3 className="text-sm font-semibold text-[var(--foreground)] mb-2">Security &amp; Compliance</h3>
-              <p className="text-xs text-zinc-400 leading-relaxed">
-                Managed firewall, DDoS protection, network segmentation. Assess gaps in your
-                current stack and get recommendations that match your risk profile &mdash; not the vendor&apos;s margin targets.
-              </p>
-            </div>
-            <div className="bg-[var(--card)] border border-[var(--card-border)] rounded-xl p-5 hover:bg-[var(--card-hover)] transition-all duration-300">
-              <div className="text-2xl mb-3">&#128196;</div>
-              <h3 className="text-sm font-semibold text-[var(--foreground)] mb-2">Vendor &amp; Contract Strategy</h3>
-              <p className="text-xs text-zinc-400 leading-relaxed">
-                RFP development, proposal evaluation, contract negotiation. I&apos;ve written hundreds
-                of enterprise telecom proposals &mdash; now I review them for the buyer&apos;s side.
-              </p>
-            </div>
-          </div>
-
-          {/* Credibility Bar */}
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
-            <div className="text-center">
-              <div className="text-xl md:text-2xl font-bold gradient-text">15+ Years</div>
-              <div className="text-[10px] text-zinc-500 mt-1 uppercase tracking-wider">Enterprise Telecom</div>
-            </div>
-            <div className="text-center">
-              <div className="text-xl md:text-2xl font-bold gradient-text">UC &amp; VoIP</div>
-              <div className="text-[10px] text-zinc-500 mt-1 uppercase tracking-wider">Solutions Architecture</div>
-            </div>
-            <div className="text-center">
-              <div className="text-xl md:text-2xl font-bold gradient-text">MPLS / SD-WAN</div>
-              <div className="text-[10px] text-zinc-500 mt-1 uppercase tracking-wider">Ethernet &amp; WAN</div>
-            </div>
-            <div className="text-center">
-              <div className="text-xl md:text-2xl font-bold gradient-text">Network Security</div>
-              <div className="text-[10px] text-zinc-500 mt-1 uppercase tracking-wider">&amp; Compliance</div>
-            </div>
           </div>
         </div>
       </section>
@@ -609,23 +529,7 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Footer */}
-      <footer className="py-8 px-6 border-t border-[var(--card-border)]">
-        <div className="max-w-6xl mx-auto flex flex-col sm:flex-row items-center justify-between gap-4">
-          <div className="text-sm text-zinc-500">
-            &copy; 2025 withlukas. All rights reserved.
-          </div>
-          <div className="flex items-center gap-4 text-xs text-zinc-600">
-            <a href="https://github.com/LukasT-Ai" target="_blank" rel="noopener noreferrer" className="hover:text-[var(--foreground)] transition-colors">
-              GitHub
-            </a>
-            <span>&middot;</span>
-            <a href="mailto:Lukas.T@withlukas.com" className="hover:text-[var(--foreground)] transition-colors">
-              Email
-            </a>
-          </div>
-        </div>
-      </footer>
+      <Footer />
     </main>
   );
 }
