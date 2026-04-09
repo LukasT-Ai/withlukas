@@ -252,7 +252,7 @@ const jsonLd = {
       "@id": "https://withlukas.com/#organization",
       name: "withlukas",
       url: "https://withlukas.com",
-      logo: "https://withlukas.com/icon.svg",
+      logo: "https://www.withlukas.com/logo-square.png",
       founder: {
         "@type": "Person",
         name: "Lamin Traoré",

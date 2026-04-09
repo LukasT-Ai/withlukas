@@ -36,6 +36,12 @@ export default async function Image() {
           }}
         />
 
+        {/* W Mark */}
+        <svg viewBox="0 0 80 55" width="120" height="82" style={{ marginBottom: 16 }}>
+          <path d="M6 8 L21 47 L40 24 L59 47 L74 8" stroke="#3B82F6" strokeWidth="7" strokeLinecap="round" strokeLinejoin="round" fill="none"/>
+          <circle cx="40" cy="4" r="4.5" fill="#3B82F6"/>
+        </svg>
+
         {/* Logo */}
         <div
           style={{
@@ -46,8 +52,8 @@ export default async function Image() {
             display: "flex",
           }}
         >
-          <span style={{ color: "#ededed" }}>with</span>
-          <span style={{ color: "#3b82f6" }}>lukas</span>
+          <span style={{ color: "#ffffff" }}>with</span>
+          <span style={{ color: "#93C5FD" }}>lukas</span>
         </div>
 
         {/* Tagline */}
@@ -64,7 +70,7 @@ export default async function Image() {
 
         {/* Service pills */}
         <div style={{ display: "flex", gap: 16 }}>
-          {["Sales Automation", "App Development", "AI Integration", "SEO & Web"].map(
+          {["Telecom Consulting", "Sales Automation", "App Development", "AI Integration"].map(
             (label) => (
               <div
                 key={label}

@@ -13,7 +13,7 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  metadataBase: new URL("https://withlukas.com"),
+  metadataBase: new URL("https://www.withlukas.com"),
   title: {
     default: "withlukas | AI-Powered Automation & App Development",
     template: "%s | withlukas",
@@ -35,12 +35,12 @@ export const metadata: Metadata = {
     "withlukas",
     "Lamin Traoré",
   ],
-  authors: [{ name: "Lamin Traoré", url: "https://withlukas.com" }],
+  authors: [{ name: "Lamin Traoré", url: "https://www.withlukas.com" }],
   creator: "Lamin Traoré",
   openGraph: {
     type: "website",
     locale: "en_US",
-    url: "https://withlukas.com",
+    url: "https://www.withlukas.com",
     siteName: "withlukas",
     title: "withlukas | AI-Powered Automation & App Development",
     description:
@@ -64,8 +64,13 @@ export const metadata: Metadata = {
     },
   },
   alternates: {
-    canonical: "https://withlukas.com",
+    canonical: "https://www.withlukas.com",
   },
+  icons: {
+    icon: "/icon.svg",
+    apple: "/apple-touch-icon.png",
+  },
+  manifest: "/site.webmanifest",
 };
 
 export default function RootLayout({

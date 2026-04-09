@@ -19,8 +19,12 @@ export default function Navbar() {
   return (
     <nav className="fixed top-0 left-0 right-0 z-50 bg-[var(--background)]/80 backdrop-blur-xl border-b border-[var(--card-border)]">
       <div className="max-w-6xl mx-auto px-6 h-14 flex items-center justify-between">
-        <Link href="/" className="font-semibold text-[var(--foreground)] tracking-tight">
-          with<span className="text-blue-500">lukas</span>
+        <Link href="/" className="flex items-center gap-2 font-semibold text-[var(--foreground)] tracking-tight">
+          <svg viewBox="0 0 32 32" fill="none" className="w-7 h-7" xmlns="http://www.w3.org/2000/svg">
+            <path d="M6 8 L11 23 L16 14 L21 23 L26 8" stroke="#3B82F6" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round"/>
+            <circle cx="16" cy="6.5" r="1.8" fill="#3B82F6"/>
+          </svg>
+          <span>with<span className="text-[#93C5FD] font-normal">lukas</span></span>
         </Link>
 
         {/* Desktop nav */}
