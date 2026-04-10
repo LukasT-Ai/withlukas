@@ -518,7 +518,7 @@ export default function Home() {
         <div className="max-w-4xl mx-auto">
           <ContactForm
             heading="Let's Build Something"
-            subheading="Have a process that needs automating? A tool that needs building? A workflow that's eating your team's time? Let's talk."
+            subheading="Have a process that needs automating? A tool that needs building? A website that needs a refresh? A workflow that's eating your team's time? Let's talk."
           />
           <p className="text-xs text-zinc-600 mt-4 text-center">Atlanta, GA &middot; Available for consulting and custom builds</p>
         </div>
