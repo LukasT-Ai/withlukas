@@ -5,16 +5,20 @@ import PricingClient from "./pricing-client";
 import ContactForm from "../components/contact-form";
 
 export const metadata: Metadata = {
-  title: "Pricing",
+  title: "Pricing — Atlanta, GA Consulting & Development Rates",
   description:
-    "Competitive pricing for telecom consulting, sales automation, app development, AI integration, SEO, and workflow automation services in Atlanta, GA.",
+    "Transparent pricing for Atlanta-based consulting services: telecom advisory, sales automation, web & app development, AI integration, SEO, and workflow automation. Packages from $750.",
   keywords: [
-    "consulting pricing Atlanta",
-    "website development cost Georgia",
-    "telecom consulting rates",
-    "sales automation pricing",
-    "AI integration cost",
-    "affordable consulting",
+    "consulting pricing Atlanta GA",
+    "website development cost Atlanta",
+    "app development pricing Georgia",
+    "telecom consulting rates Atlanta",
+    "sales automation pricing Atlanta",
+    "AI integration cost Georgia",
+    "SEO pricing Atlanta",
+    "affordable consulting Atlanta",
+    "small business consulting rates Georgia",
+    "workflow automation cost Atlanta",
   ],
 };
 

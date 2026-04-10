@@ -2,9 +2,9 @@ import type { Metadata } from "next";
 import ServicePage from "../../components/service-page";
 
 export const metadata: Metadata = {
-  title: "Web & App Development | Websites, Web Apps, Dashboards & Tools",
+  title: "Web & App Development Atlanta, GA | Websites, Web Apps, Dashboards & Tools",
   description:
-    "Custom websites, web applications, dashboards, and internal tools built with Next.js, React, TypeScript, and Node.js. From business websites to full-stack platforms — production-ready from day one.",
+    "Atlanta, GA custom websites, web applications, dashboards, and internal tools built with Next.js, React, TypeScript, and Node.js. From business websites to full-stack platforms — production-ready from day one.",
   keywords: [
     "website development",
     "web design Atlanta",
@@ -18,12 +18,15 @@ export const metadata: Metadata = {
     "business website development",
     "Node.js developer",
     "custom software Atlanta",
+    "app development Atlanta GA",
+    "web developer Atlanta Georgia",
+    "website development Georgia",
     "withlukas",
   ],
   openGraph: {
-    title: "Web & App Development | withlukas",
+    title: "Web & App Development Atlanta, GA | withlukas",
     description:
-      "Websites, web apps, dashboards, and tools built with modern frameworks. Production-ready from day one.",
+      "Atlanta-based web and app development. Websites, web apps, dashboards, and tools built with modern frameworks. Production-ready from day one.",
     url: "https://withlukas.com/services/app-development",
   },
   alternates: {
@@ -40,7 +43,7 @@ const jsonLd = {
       name: "Web & App Development",
       provider: { "@id": "https://withlukas.com/#organization" },
       serviceType: "Web & App Development",
-      areaServed: ["United States", "Germany"],
+      areaServed: [{ "@type": "City", name: "Atlanta", containedInPlace: { "@type": "State", name: "Georgia" } }, "United States", "Germany"],
       description:
         "Custom websites and full-stack web application development including business sites, dashboards, internal tools, and production systems using Next.js, React, TypeScript, and Node.js.",
       url: "https://withlukas.com/services/app-development",

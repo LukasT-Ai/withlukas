@@ -2,9 +2,9 @@ import type { Metadata } from "next";
 import ServicePage from "../../components/service-page";
 
 export const metadata: Metadata = {
-  title: "Sales Automation | Email Outreach, CRM & Pipeline Tools",
+  title: "Sales Automation Atlanta, GA | Email Outreach, CRM & Pipeline Tools",
   description:
-    "Custom sales automation systems that handle prospecting, email outreach, follow-up sequences, response classification, and pipeline management. Built for sales teams that want to sell, not do admin.",
+    "Atlanta, GA sales automation systems that handle prospecting, email outreach, follow-up sequences, response classification, and pipeline management. Built for sales teams that want to sell, not do admin.",
   keywords: [
     "sales automation",
     "email outreach automation",
@@ -16,12 +16,15 @@ export const metadata: Metadata = {
     "cold email automation",
     "sales technology",
     "lead management automation",
+    "sales automation Atlanta GA",
+    "email outreach Atlanta",
+    "sales automation Georgia",
     "withlukas",
   ],
   openGraph: {
-    title: "Sales Automation | withlukas",
+    title: "Sales Automation Atlanta, GA | withlukas",
     description:
-      "Custom email outreach engines, automated follow-ups, AI-powered response classification, and CRM dashboards. Turn prospecting into a system.",
+      "Atlanta-based custom email outreach engines, automated follow-ups, AI-powered response classification, and CRM dashboards. Turn prospecting into a system.",
     url: "https://withlukas.com/services/sales-automation",
   },
   alternates: {
@@ -38,7 +41,7 @@ const jsonLd = {
       name: "Sales Automation",
       provider: { "@id": "https://withlukas.com/#organization" },
       serviceType: "Sales Automation",
-      areaServed: ["United States", "Germany"],
+      areaServed: [{ "@type": "City", name: "Atlanta", containedInPlace: { "@type": "State", name: "Georgia" } }, "United States", "Germany"],
       description:
         "End-to-end sales automation including email outreach engines, follow-up sequences, AI-powered response classification, and management dashboards.",
       url: "https://withlukas.com/services/sales-automation",

@@ -2,9 +2,9 @@ import type { Metadata } from "next";
 import ServicePage from "../../components/service-page";
 
 export const metadata: Metadata = {
-  title: "AI Integration | Smart Classification, Scoring & Content Generation",
+  title: "AI Integration Atlanta, GA | Smart Classification, Scoring & Content Generation",
   description:
-    "Practical AI integration for business workflows. Response classification, lead scoring, content generation, and intelligent automation — AI that does the heavy lifting while you make the decisions.",
+    "Atlanta, GA practical AI integration for business workflows. Response classification, lead scoring, content generation, and intelligent automation — AI that does the heavy lifting while you make the decisions.",
   keywords: [
     "AI integration",
     "AI automation",
@@ -17,12 +17,15 @@ export const metadata: Metadata = {
     "AI workflow automation",
     "machine learning integration",
     "AI consulting Atlanta",
+    "AI integration Atlanta GA",
+    "AI automation Georgia",
+    "AI solutions Atlanta metro",
     "withlukas",
   ],
   openGraph: {
-    title: "AI Integration | withlukas",
+    title: "AI Integration Atlanta, GA | withlukas",
     description:
-      "Practical AI that solves real problems — classification, scoring, content generation, and intelligent automation built into your workflows.",
+      "Atlanta-based AI integration that solves real problems — classification, scoring, content generation, and intelligent automation built into your workflows.",
     url: "https://withlukas.com/services/ai-integration",
   },
   alternates: {
@@ -39,7 +42,7 @@ const jsonLd = {
       name: "AI Integration",
       provider: { "@id": "https://withlukas.com/#organization" },
       serviceType: "AI Integration",
-      areaServed: ["United States", "Germany"],
+      areaServed: [{ "@type": "City", name: "Atlanta", containedInPlace: { "@type": "State", name: "Georgia" } }, "United States", "Germany"],
       description:
         "AI integration services including response classification, lead scoring, content generation, and intelligent workflow automation.",
       url: "https://withlukas.com/services/ai-integration",

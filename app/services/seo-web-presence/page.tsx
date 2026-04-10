@@ -2,9 +2,9 @@ import type { Metadata } from "next";
 import ServicePage from "../../components/service-page";
 
 export const metadata: Metadata = {
-  title: "SEO & Web Presence | Technical SEO, Structured Data & Web Development",
+  title: "SEO & Web Presence Atlanta, GA | Technical SEO, Structured Data & Web Development",
   description:
-    "Technical SEO and web presence services. Structured data, JSON-LD schemas, sitemaps, OG images, bilingual content, and fast Next.js websites built to rank on Google and convert visitors.",
+    "Atlanta, GA technical SEO and web presence services. Structured data, JSON-LD schemas, sitemaps, OG images, bilingual content, and fast Next.js websites built to rank on Google and convert visitors.",
   keywords: [
     "technical SEO",
     "SEO services",
@@ -19,12 +19,15 @@ export const metadata: Metadata = {
     "Google ranking",
     "web presence optimization",
     "SEO consultant Atlanta",
+    "SEO services Atlanta GA",
+    "technical SEO Georgia",
+    "web presence Atlanta metro",
     "withlukas",
   ],
   openGraph: {
-    title: "SEO & Web Presence | withlukas",
+    title: "SEO & Web Presence Atlanta, GA | withlukas",
     description:
-      "Technical SEO, structured data, sitemaps, OG images, and fast websites built to rank on Google and convert visitors.",
+      "Atlanta-based technical SEO, structured data, sitemaps, OG images, and fast websites built to rank on Google and convert visitors.",
     url: "https://withlukas.com/services/seo-web-presence",
   },
   alternates: {
@@ -41,7 +44,7 @@ const jsonLd = {
       name: "SEO & Web Presence",
       provider: { "@id": "https://withlukas.com/#organization" },
       serviceType: "SEO Optimization",
-      areaServed: ["United States", "Germany"],
+      areaServed: [{ "@type": "City", name: "Atlanta", containedInPlace: { "@type": "State", name: "Georgia" } }, "United States", "Germany"],
       description:
         "Technical SEO services including structured data, JSON-LD schemas, sitemap generation, OG image optimization, and high-performance web development.",
       url: "https://withlukas.com/services/seo-web-presence",

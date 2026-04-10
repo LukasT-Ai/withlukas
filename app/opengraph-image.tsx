@@ -1,7 +1,7 @@
 import { ImageResponse } from "next/og";
 
 export const runtime = "edge";
-export const alt = "withlukas — AI-Powered Automation & App Development";
+export const alt = "withlukas — Automation, Web Development & AI Consulting in Atlanta, GA";
 export const size = { width: 1200, height: 630 };
 export const contentType = "image/png";
 
@@ -65,12 +65,12 @@ export default async function Image() {
             display: "flex",
           }}
         >
-          AI-Powered Automation & App Development
+          Automation & Consulting — Atlanta, GA
         </div>
 
         {/* Service pills */}
         <div style={{ display: "flex", gap: 16 }}>
-          {["Telecom Consulting", "Sales Automation", "App Development", "AI Integration"].map(
+          {["Web Development", "Sales Automation", "AI Integration", "SEO"].map(
             (label) => (
               <div
                 key={label}

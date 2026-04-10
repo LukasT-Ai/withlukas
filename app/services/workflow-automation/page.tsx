@@ -2,9 +2,9 @@ import type { Metadata } from "next";
 import ServicePage from "../../components/service-page";
 
 export const metadata: Metadata = {
-  title: "Workflow Automation | Forms, Pipelines & Process Automation",
+  title: "Workflow Automation Atlanta, GA | Forms, Pipelines & Process Automation",
   description:
-    "Custom workflow automation using Microsoft Forms, Power Automate, Excel/VBA, cron jobs, and custom pipelines. Eliminate manual data entry and connect your tools into seamless workflows.",
+    "Atlanta, GA custom workflow automation using Microsoft Forms, Power Automate, Excel/VBA, cron jobs, and custom pipelines. Eliminate manual data entry and connect your tools into seamless workflows.",
   keywords: [
     "workflow automation",
     "process automation",
@@ -17,12 +17,15 @@ export const metadata: Metadata = {
     "manual data entry elimination",
     "Microsoft 365 automation",
     "cron job automation",
+    "workflow automation Atlanta GA",
+    "process automation Georgia",
+    "business automation Atlanta metro",
     "withlukas",
   ],
   openGraph: {
-    title: "Workflow Automation | withlukas",
+    title: "Workflow Automation Atlanta, GA | withlukas",
     description:
-      "Microsoft Forms, Power Automate, Excel/VBA, and custom pipelines. Connect your tools and eliminate manual data entry.",
+      "Atlanta-based workflow automation with Microsoft Forms, Power Automate, Excel/VBA, and custom pipelines. Connect your tools and eliminate manual data entry.",
     url: "https://withlukas.com/services/workflow-automation",
   },
   alternates: {
@@ -39,7 +42,7 @@ const jsonLd = {
       name: "Workflow Automation",
       provider: { "@id": "https://withlukas.com/#organization" },
       serviceType: "Workflow Automation",
-      areaServed: ["United States", "Germany"],
+      areaServed: [{ "@type": "City", name: "Atlanta", containedInPlace: { "@type": "State", name: "Georgia" } }, "United States", "Germany"],
       description:
         "Custom workflow automation services including Microsoft Forms, Power Automate, Excel/VBA, and custom pipeline development.",
       url: "https://withlukas.com/services/workflow-automation",

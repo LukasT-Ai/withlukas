@@ -8,6 +8,6 @@ export default function robots(): MetadataRoute.Robots {
         allow: "/",
       },
     ],
-    sitemap: "https://withlukas.com/sitemap.xml",
+    sitemap: "https://www.withlukas.com/sitemap.xml",
   };
 }

@@ -249,24 +249,32 @@ const jsonLd = {
   "@context": "https://schema.org",
   "@graph": [
     {
-      "@type": "Organization",
+      "@type": ["Organization", "LocalBusiness"],
       "@id": "https://withlukas.com/#organization",
       name: "withlukas",
       url: "https://withlukas.com",
       logo: "https://www.withlukas.com/logo-square.png",
+      image: "https://www.withlukas.com/logo-square.png",
+      telephone: "+1-404-234-0448",
+      email: "lamintraore@withlukas.com",
       founder: {
         "@type": "Person",
         name: "Lamin Traoré",
         jobTitle: "Owner & Operator",
-        address: {
-          "@type": "PostalAddress",
-          addressLocality: "Atlanta",
-          addressRegion: "GA",
-          addressCountry: "US",
-        },
+      },
+      address: {
+        "@type": "PostalAddress",
+        addressLocality: "Atlanta",
+        addressRegion: "GA",
+        addressCountry: "US",
+      },
+      geo: {
+        "@type": "GeoCoordinates",
+        latitude: 33.749,
+        longitude: -84.388,
       },
       description:
-        "Custom AI-powered automation tools, app development, sales technology, and SEO services. Making work and life more efficient.",
+        "Atlanta-based consulting firm specializing in AI-powered automation, custom web and app development, sales technology, telecom consulting, and SEO services for small and medium businesses.",
       knowsAbout: [
         "Sales Automation",
         "Web & App Development",
@@ -275,7 +283,6 @@ const jsonLd = {
         "Workflow Automation",
         "Email Outreach",
         "Performance Tracking",
-        "Algorithmic Trading",
         "Telecommunications Consulting",
         "Unified Communications",
         "MPLS",
@@ -283,7 +290,17 @@ const jsonLd = {
         "Network Security",
         "VoIP Solutions Architecture",
       ],
-      areaServed: ["United States", "Germany"],
+      areaServed: [
+        {
+          "@type": "City",
+          name: "Atlanta",
+          containedInPlace: { "@type": "State", name: "Georgia" },
+        },
+        { "@type": "State", name: "Georgia" },
+        "United States",
+        "Germany",
+      ],
+      priceRange: "$$",
     },
     {
       "@type": "WebSite",
@@ -307,7 +324,16 @@ const jsonLd = {
       "@id": "https://withlukas.com/#service",
       name: "withlukas",
       provider: { "@id": "https://withlukas.com/#organization" },
-      areaServed: ["United States", "Germany"],
+      areaServed: [
+        {
+          "@type": "City",
+          name: "Atlanta",
+          containedInPlace: { "@type": "State", name: "Georgia" },
+        },
+        { "@type": "State", name: "Georgia" },
+        "United States",
+        "Germany",
+      ],
       serviceType: [
         "Sales Automation",
         "Web & App Development",
@@ -319,6 +345,43 @@ const jsonLd = {
         "Unified Communications Strategy",
       ],
       url: "https://withlukas.com",
+    },
+    {
+      "@type": "FAQPage",
+      mainEntity: [
+        {
+          "@type": "Question",
+          name: "What services does withlukas offer in Atlanta, GA?",
+          acceptedAnswer: {
+            "@type": "Answer",
+            text: "withlukas offers telecom consulting, sales automation, custom web and app development, AI integration, SEO and web presence optimization, and workflow automation for small and medium businesses in Atlanta, Georgia and beyond.",
+          },
+        },
+        {
+          "@type": "Question",
+          name: "Do you build websites for small businesses in Atlanta?",
+          acceptedAnswer: {
+            "@type": "Answer",
+            text: "Yes. We build professional business websites, landing pages, web applications, and full-stack platforms using modern frameworks like Next.js, React, and TypeScript. Packages start at $1,500 for a website.",
+          },
+        },
+        {
+          "@type": "Question",
+          name: "How much does automation consulting cost in Atlanta?",
+          acceptedAnswer: {
+            "@type": "Answer",
+            text: "Hourly rates range from $100-$150/hr depending on the service. Project packages start at $750 for an SEO audit and go up to $25,000+ for complex platforms. Monthly retainers start at $500/month for 5-10 hours.",
+          },
+        },
+        {
+          "@type": "Question",
+          name: "What areas does withlukas serve?",
+          acceptedAnswer: {
+            "@type": "Answer",
+            text: "withlukas is based in Atlanta, GA and serves small and medium businesses throughout Georgia, the United States, and internationally including Germany. Most services can be delivered remotely.",
+          },
+        },
+      ],
     },
   ],
 };
@@ -336,15 +399,15 @@ export default function Home() {
       <section className="pt-32 pb-20 px-6">
         <div className="max-w-4xl mx-auto text-center">
           <div className="inline-block mb-4 text-xs text-zinc-500 bg-[var(--card)] border border-[var(--card-border)] rounded-full px-4 py-1.5">
-            Automation &middot; Web & App Development &middot; Sales Technology
+            Atlanta, GA &middot; Automation &middot; Web Development &middot; AI Consulting
           </div>
           <h1 className="text-4xl md:text-6xl font-bold tracking-tight mb-6 leading-[1.1]">
             Build smarter.<br />
             <span className="gradient-text">Ship faster.</span>
           </h1>
           <p className="text-lg text-zinc-400 max-w-2xl mx-auto mb-10 leading-relaxed">
-            Custom AI-powered tools that make work and life more efficient.
-            From sales automation engines to algorithmic trading bots — if it can be
+            Atlanta-based consulting for small and medium businesses.
+            Automation, custom websites & apps, AI integration, telecom advisory, and SEO — if it can be
             automated, optimized, or built better, we build it.
           </p>
           <div className="flex items-center justify-center gap-4">

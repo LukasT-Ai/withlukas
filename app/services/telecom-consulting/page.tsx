@@ -2,9 +2,9 @@ import type { Metadata } from "next";
 import ServicePage from "../../components/service-page";
 
 export const metadata: Metadata = {
-  title: "Telecom Consulting | Voice, Data, Network & Security Advisory",
+  title: "Telecom Consulting Atlanta, GA | Voice, Data, Network & Security Advisory",
   description:
-    "Enterprise telecom consulting with 15+ years of experience at AT&T and Spectrum Enterprise. Voice & UC strategy, MPLS/SD-WAN optimization, network security assessments, and vendor contract negotiation in Atlanta, GA.",
+    "Atlanta, GA enterprise telecom consulting with 15+ years of experience at AT&T and Spectrum Enterprise. Voice & UC strategy, MPLS/SD-WAN optimization, network security assessments, and vendor contract negotiation serving the greater Atlanta metro area.",
   keywords: [
     "telecom consulting",
     "telecommunications consultant",
@@ -19,13 +19,16 @@ export const metadata: Metadata = {
     "telecom contract review",
     "voice network migration",
     "enterprise network consultant Atlanta",
+    "telecom consulting Atlanta GA",
+    "telecom consultant Georgia",
+    "Atlanta telecom advisory",
     "Spectrum Enterprise consultant",
     "withlukas",
   ],
   openGraph: {
-    title: "Telecom Consulting | withlukas",
+    title: "Telecom Consulting Atlanta, GA | withlukas",
     description:
-      "15+ years advising enterprises on voice, data, network, and security. Cut through vendor noise and make infrastructure decisions that fit your business.",
+      "Atlanta-based telecom consulting with 15+ years advising enterprises on voice, data, network, and security. Cut through vendor noise and make infrastructure decisions that fit your business.",
     url: "https://withlukas.com/services/telecom-consulting",
   },
   alternates: {
@@ -42,7 +45,7 @@ const jsonLd = {
       name: "Telecom Consulting",
       provider: { "@id": "https://withlukas.com/#organization" },
       serviceType: "Telecommunications Consulting",
-      areaServed: ["United States", "Germany"],
+      areaServed: [{ "@type": "City", name: "Atlanta", containedInPlace: { "@type": "State", name: "Georgia" } }, "United States", "Germany"],
       description:
         "Enterprise telecom advisory covering voice and unified communications strategy, network and connectivity optimization, security assessments, and vendor contract negotiation.",
       url: "https://withlukas.com/services/telecom-consulting",
