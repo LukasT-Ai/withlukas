@@ -6,9 +6,9 @@ export const runtime = "nodejs";
 
 export async function POST(req: NextRequest) {
   try {
-    const { name, email, company, services, message } = await req.json();
+    const { name, email, phone, company, website, services, message } = await req.json();
 
-    if (!name || !email || !services?.length) {
+    if (!name || !email || !phone || !services?.length) {
       return NextResponse.json({ error: "Missing required fields" }, { status: 400 });
     }
 
@@ -35,7 +35,9 @@ export async function POST(req: NextRequest) {
             <table style="width: 100%; font-size: 14px; border-collapse: collapse;">
               <tr><td style="padding: 8px 0; color: #666; width: 100px;"><strong>Name</strong></td><td style="padding: 8px 0;">${name}</td></tr>
               <tr><td style="padding: 8px 0; color: #666;"><strong>Email</strong></td><td style="padding: 8px 0;"><a href="mailto:${email}">${email}</a></td></tr>
+              <tr><td style="padding: 8px 0; color: #666;"><strong>Phone</strong></td><td style="padding: 8px 0;"><a href="tel:${phone}">${phone}</a></td></tr>
               ${company ? `<tr><td style="padding: 8px 0; color: #666;"><strong>Company</strong></td><td style="padding: 8px 0;">${company}</td></tr>` : ""}
+              ${website ? `<tr><td style="padding: 8px 0; color: #666;"><strong>Website</strong></td><td style="padding: 8px 0;"><a href="${website}">${website}</a></td></tr>` : ""}
               <tr><td style="padding: 8px 0; color: #666; vertical-align: top;"><strong>Services</strong></td><td style="padding: 8px 0;">${services.join(", ")}</td></tr>
             </table>
             <div style="margin-top: 16px; padding: 16px; background: #f9f9f9; border-radius: 6px;">
@@ -48,7 +50,7 @@ export async function POST(req: NextRequest) {
           </div>
         </div>
       `,
-      text: `New inquiry from ${name} (${email})${company ? ` at ${company}` : ""}\n\nServices:\n${serviceList}\n\nMessage:\n${message}`,
+      text: `New inquiry from ${name} (${email}, ${phone})${company ? ` at ${company}` : ""}\n\nServices:\n${serviceList}\n\nMessage:\n${message}`,
     });
 
     return NextResponse.json({ ok: true });

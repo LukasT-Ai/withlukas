@@ -15,7 +15,9 @@ const serviceOptions = [
 export default function ContactForm({ heading, subheading }: { heading?: string; subheading?: string }) {
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
+  const [phone, setPhone] = useState("");
   const [company, setCompany] = useState("");
+  const [website, setWebsite] = useState("");
   const [services, setServices] = useState<string[]>([]);
   const [otherDetail, setOtherDetail] = useState("");
   const [message, setMessage] = useState("");
@@ -29,7 +31,7 @@ export default function ContactForm({ heading, subheading }: { heading?: string;
 
   async function handleSubmit(e: React.FormEvent) {
     e.preventDefault();
-    if (!name || !email || services.length === 0) return;
+    if (!name || !email || !phone || services.length === 0) return;
 
     setStatus("sending");
     try {
@@ -39,7 +41,9 @@ export default function ContactForm({ heading, subheading }: { heading?: string;
         body: JSON.stringify({
           name,
           email,
+          phone,
           company,
+          website,
           services: services.includes("Other")
             ? [...services.filter((s) => s !== "Other"), `Other: ${otherDetail}`]
             : services,
@@ -50,7 +54,9 @@ export default function ContactForm({ heading, subheading }: { heading?: string;
         setStatus("sent");
         setName("");
         setEmail("");
+        setPhone("");
         setCompany("");
+        setWebsite("");
         setServices([]);
         setOtherDetail("");
         setMessage("");
@@ -111,14 +117,38 @@ export default function ContactForm({ heading, subheading }: { heading?: string;
           </div>
         </div>
 
-        <div>
-          <label className="block text-sm text-zinc-400 mb-1">Company</label>
+        <div className="grid sm:grid-cols-2 gap-4">
+          <div>
+            <label className="block text-sm text-zinc-400 mb-1">Phone *</label>
+            <input
+              type="tel"
+              value={phone}
+              onChange={(e) => setPhone(e.target.value)}
+              required
+              className="w-full bg-[var(--background)] border border-[var(--card-border)] rounded-lg px-4 py-2.5 text-sm text-[var(--foreground)] placeholder-zinc-600 focus:outline-none focus:border-blue-500"
+              placeholder="(555) 123-4567"
+            />
+          </div>
+          <div>
+            <label className="block text-sm text-zinc-400 mb-1">Company</label>
           <input
             type="text"
             value={company}
             onChange={(e) => setCompany(e.target.value)}
             className="w-full bg-[var(--background)] border border-[var(--card-border)] rounded-lg px-4 py-2.5 text-sm text-[var(--foreground)] placeholder-zinc-600 focus:outline-none focus:border-blue-500"
             placeholder="Company name (optional)"
+          />
+          </div>
+        </div>
+
+        <div>
+          <label className="block text-sm text-zinc-400 mb-1">Company Website</label>
+          <input
+            type="url"
+            value={website}
+            onChange={(e) => setWebsite(e.target.value)}
+            className="w-full bg-[var(--background)] border border-[var(--card-border)] rounded-lg px-4 py-2.5 text-sm text-[var(--foreground)] placeholder-zinc-600 focus:outline-none focus:border-blue-500"
+            placeholder="https://yourcompany.com (optional)"
           />
         </div>
 
@@ -170,7 +200,7 @@ export default function ContactForm({ heading, subheading }: { heading?: string;
 
         <button
           type="submit"
-          disabled={status === "sending" || !name || !email || services.length === 0 || (services.includes("Other") && !otherDetail)}
+          disabled={status === "sending" || !name || !email || !phone || services.length === 0 || (services.includes("Other") && !otherDetail)}
           className="w-full bg-blue-500 hover:bg-blue-400 disabled:opacity-50 text-white py-3 rounded-lg text-sm font-medium transition-colors"
         >
           {status === "sending" ? "Sending..." : "Send Message"}
