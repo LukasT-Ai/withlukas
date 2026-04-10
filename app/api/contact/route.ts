@@ -13,11 +13,16 @@ export async function POST(req: NextRequest) {
     }
 
     const transporter = nodemailer.createTransport({
-      service: "gmail",
+      host: "smtp.gmail.com",
+      port: 587,
+      secure: false,
       auth: {
         user: process.env.SMTP_USER,
         pass: process.env.SMTP_PASS,
       },
+      connectionTimeout: 10000,
+      greetingTimeout: 10000,
+      socketTimeout: 10000,
     });
 
     const serviceList = services.map((s: string) => `  - ${s}`).join("\n");
@@ -26,7 +31,7 @@ export async function POST(req: NextRequest) {
       from: `"WithLukas Contact Form" <${process.env.SMTP_USER}>`,
       to: "lamintraore@withlukas.com",
       replyTo: email,
-      subject: `New Inquiry: ${services.join(", ")} — ${name}`,
+      subject: `New Inquiry: ${services.join(", ")} - ${name}`,
       html: `
         <div style="font-family: system-ui, sans-serif; max-width: 600px; margin: 0 auto;">
           <div style="background: #1B3A5C; color: white; padding: 20px 24px; border-radius: 8px 8px 0 0;">
