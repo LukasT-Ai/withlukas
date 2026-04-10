@@ -21,7 +21,7 @@ export async function POST(req: NextRequest) {
     const serviceList = services.map((s: string) => `  - ${s}`).join("\n");
 
     await resend.emails.send({
-      from: "WithLukas Contact Form <noreply@withlukas.com>",
+      from: "WithLukas Contact Form <lukas.t@withlukas.com>",
       to: "lamintraore@withlukas.com",
       replyTo: email,
       subject: `New Inquiry: ${services.join(", ")} - ${name}`,
