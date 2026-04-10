@@ -455,27 +455,6 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Productize CTA */}
-      <section className="py-20 px-6">
-        <div className="max-w-4xl mx-auto">
-          <div className="bg-[var(--card)] border border-[var(--card-border)] rounded-2xl p-8 md:p-12 text-center glow">
-            <div className="inline-block mb-4 text-xs text-amber-400 bg-amber-500/10 border border-amber-500/20 rounded-full px-4 py-1.5">
-              Coming Soon
-            </div>
-            <h2 className="text-2xl md:text-3xl font-bold mb-4">
-              Tools You Can Use
-            </h2>
-            <p className="text-zinc-400 max-w-xl mx-auto mb-6 leading-relaxed">
-              We&apos;re packaging our most powerful internal tools into products anyone can use.
-              Sales outreach automation, performance dashboards, job search engines — built
-              from real-world use, not theory.
-            </p>
-            <a href="#contact" className="inline-block bg-blue-500 hover:bg-blue-400 text-white px-6 py-2.5 rounded-lg text-sm font-medium transition-colors">
-              Get Early Access
-            </a>
-          </div>
-        </div>
-      </section>
 
       {/* About */}
       <section id="about" className="py-20 px-6 border-t border-[var(--card-border)]">
