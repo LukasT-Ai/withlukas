@@ -68,7 +68,7 @@ export default function ContactForm({ heading, subheading }: { heading?: string;
         <div className="text-4xl mb-4">&#10003;</div>
         <h3 className="text-xl font-bold mb-2">Message Sent</h3>
         <p className="text-zinc-400">
-          Thanks for reaching out. I&apos;ll get back to you within 24 hours.
+          Thanks for reaching out. We&apos;ll get back to you within 48 hours.
         </p>
         <button
           onClick={() => setStatus("idle")}
