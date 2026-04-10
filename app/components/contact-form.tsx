@@ -9,6 +9,7 @@ const serviceOptions = [
   "AI Integration",
   "SEO & Web Presence",
   "Workflow Automation",
+  "Other",
 ];
 
 export default function ContactForm({ heading, subheading }: { heading?: string; subheading?: string }) {
@@ -16,6 +17,7 @@ export default function ContactForm({ heading, subheading }: { heading?: string;
   const [email, setEmail] = useState("");
   const [company, setCompany] = useState("");
   const [services, setServices] = useState<string[]>([]);
+  const [otherDetail, setOtherDetail] = useState("");
   const [message, setMessage] = useState("");
   const [status, setStatus] = useState<"idle" | "sending" | "sent" | "error">("idle");
 
@@ -34,7 +36,15 @@ export default function ContactForm({ heading, subheading }: { heading?: string;
       const res = await fetch("/api/contact", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ name, email, company, services, message }),
+        body: JSON.stringify({
+          name,
+          email,
+          company,
+          services: services.includes("Other")
+            ? [...services.filter((s) => s !== "Other"), `Other: ${otherDetail}`]
+            : services,
+          message,
+        }),
       });
       if (res.ok) {
         setStatus("sent");
@@ -42,6 +52,7 @@ export default function ContactForm({ heading, subheading }: { heading?: string;
         setEmail("");
         setCompany("");
         setServices([]);
+        setOtherDetail("");
         setMessage("");
       } else {
         setStatus("error");
@@ -129,6 +140,16 @@ export default function ContactForm({ heading, subheading }: { heading?: string;
               </button>
             ))}
           </div>
+          {services.includes("Other") && (
+            <input
+              type="text"
+              value={otherDetail}
+              onChange={(e) => setOtherDetail(e.target.value)}
+              required
+              className="w-full mt-3 bg-[var(--background)] border border-[var(--card-border)] rounded-lg px-4 py-2.5 text-sm text-[var(--foreground)] placeholder-zinc-600 focus:outline-none focus:border-blue-500"
+              placeholder="Please describe what you're looking for"
+            />
+          )}
         </div>
 
         <div>
@@ -149,7 +170,7 @@ export default function ContactForm({ heading, subheading }: { heading?: string;
 
         <button
           type="submit"
-          disabled={status === "sending" || !name || !email || services.length === 0}
+          disabled={status === "sending" || !name || !email || services.length === 0 || (services.includes("Other") && !otherDetail)}
           className="w-full bg-blue-500 hover:bg-blue-400 disabled:opacity-50 text-white py-3 rounded-lg text-sm font-medium transition-colors"
         >
           {status === "sending" ? "Sending..." : "Send Message"}

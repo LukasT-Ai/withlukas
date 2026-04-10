@@ -307,7 +307,7 @@ export default function PricingPage() {
           <p className="text-zinc-400 max-w-2xl mx-auto text-lg">
             No agency markup. No surprise invoices. Pick a package or{" "}
             <a
-              href="mailto:Lukas.T@withlukas.com"
+              href="#quote"
               className="text-blue-400 hover:text-blue-300"
             >
               request a custom quote
@@ -453,7 +453,7 @@ export default function PricingPage() {
       </section>
 
       {/* Custom Quote Form */}
-      <section className="py-16 px-6 border-t border-[var(--card-border)]">
+      <section id="quote" className="py-16 px-6 border-t border-[var(--card-border)]">
         <div className="max-w-4xl mx-auto">
           <p className="text-zinc-400 text-center mb-2">
             Every business is unique. These packages are starting points.
