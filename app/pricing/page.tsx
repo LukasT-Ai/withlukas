@@ -10,7 +10,7 @@ export const metadata: Metadata = {
     "Competitive pricing for telecom consulting, sales automation, app development, AI integration, SEO, and workflow automation services in Atlanta, GA.",
   keywords: [
     "consulting pricing Atlanta",
-    "app development cost Georgia",
+    "website development cost Georgia",
     "telecom consulting rates",
     "sales automation pricing",
     "AI integration cost",
@@ -108,13 +108,13 @@ const services = [
     ],
   },
   {
-    name: "App Development",
+    name: "Web & App Development",
     rate: 125,
     description:
-      "Full-stack web apps, dashboards, and tools built with modern frameworks.",
+      "Websites, web apps, dashboards, and tools built with modern frameworks.",
     tiers: [
       {
-        name: "Landing Page",
+        name: "Website",
         price: 1500,
         label: "One-time",
         features: [

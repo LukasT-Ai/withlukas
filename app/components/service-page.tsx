@@ -154,10 +154,10 @@ export default function ServicePage({
             </p>
             <div className="flex items-center justify-center gap-4 flex-wrap">
               <a
-                href="mailto:Lukas.T@withlukas.com"
+                href="mailto:lamintraore@withlukas.com"
                 className="bg-blue-500 hover:bg-blue-400 text-white px-8 py-3 rounded-lg text-sm font-medium transition-colors"
               >
-                Lukas.T@withlukas.com
+                lamintraore@withlukas.com
               </a>
               <Link
                 href="/#services"

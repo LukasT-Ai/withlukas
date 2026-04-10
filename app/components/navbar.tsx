@@ -6,7 +6,7 @@ import { useState } from "react";
 const services = [
   { name: "Telecom Consulting", href: "/services/telecom-consulting" },
   { name: "Sales Automation", href: "/services/sales-automation" },
-  { name: "App Development", href: "/services/app-development" },
+  { name: "Web & App Development", href: "/services/app-development" },
   { name: "AI Integration", href: "/services/ai-integration" },
   { name: "SEO & Web Presence", href: "/services/seo-web-presence" },
   { name: "Workflow Automation", href: "/services/workflow-automation" },

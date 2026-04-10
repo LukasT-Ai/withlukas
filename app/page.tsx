@@ -37,7 +37,7 @@ const projects: Project[] = [
     tagline: "AI-powered job search engine",
     description:
       "Multi-profile job search automation that scans 18+ sources, evaluates fit with AI scoring, generates tailored CVs, and auto-applies via Greenhouse and Lever APIs. Built for the US and German job markets.",
-    category: "App Development",
+    category: "Web & App Development",
     tags: ["AI/ML", "Job Search", "PDF Generation", "Multi-Profile"],
     status: "live",
     highlights: [
@@ -65,7 +65,7 @@ const projects: Project[] = [
     tagline: "Algorithmic crypto trading bot",
     description:
       "Technical analysis trading bot for Coinbase Advanced Trade. Uses EMA crossover strategy with RSI confirmation and ATR-based position sizing. Max 3x leverage, 1% risk per trade.",
-    category: "App Development",
+    category: "Web & App Development",
     tags: ["TypeScript", "Crypto", "Trading", "Technical Analysis"],
     status: "beta",
     highlights: [
@@ -79,7 +79,7 @@ const projects: Project[] = [
     tagline: "Trading performance dashboard",
     description:
       "Real-time web dashboard for the RnG Daytrader bot. Dark-mode interface with live P&L, trade history, and strategy performance metrics. Reads directly from the bot's SQLite database.",
-    category: "App Development",
+    category: "Web & App Development",
     tags: ["Next.js", "React", "SQLite", "Data Visualization"],
     status: "beta",
     link: "https://rngcrypto.com",
@@ -149,7 +149,7 @@ const projects: Project[] = [
   },
 ];
 
-const categories = ["All", "Sales Tools", "App Development", "SEO & Web", "Workflow Automation"];
+const categories = ["All", "Sales Tools", "Web & App Development", "SEO & Web", "Workflow Automation"];
 
 /* ── Status Badge ─────────────────────────────────────────── */
 
@@ -269,7 +269,7 @@ const jsonLd = {
         "Custom AI-powered automation tools, app development, sales technology, and SEO services. Making work and life more efficient.",
       knowsAbout: [
         "Sales Automation",
-        "App Development",
+        "Web & App Development",
         "AI Integration",
         "SEO",
         "Workflow Automation",
@@ -310,7 +310,7 @@ const jsonLd = {
       areaServed: ["United States", "Germany"],
       serviceType: [
         "Sales Automation",
-        "Custom App Development",
+        "Web & App Development",
         "AI Integration",
         "SEO Optimization",
         "Workflow Automation",
@@ -336,7 +336,7 @@ export default function Home() {
       <section className="pt-32 pb-20 px-6">
         <div className="max-w-4xl mx-auto text-center">
           <div className="inline-block mb-4 text-xs text-zinc-500 bg-[var(--card)] border border-[var(--card-border)] rounded-full px-4 py-1.5">
-            Automation &middot; App Development &middot; Sales Technology
+            Automation &middot; Web & App Development &middot; Sales Technology
           </div>
           <h1 className="text-4xl md:text-6xl font-bold tracking-tight mb-6 leading-[1.1]">
             Build smarter.<br />
@@ -429,8 +429,8 @@ export default function Home() {
             />
             <ServiceCard
               icon="&#128187;"
-              title="App Development"
-              description="Full-stack web apps, dashboards, and tools built with modern frameworks. Next.js, React, Node.js, TypeScript — production-ready from day one."
+              title="Web & App Development"
+              description="Websites, web apps, dashboards, and custom tools built with modern frameworks. From business websites to full-stack platforms — production-ready from day one."
               href="/services/app-development"
             />
             <ServiceCard

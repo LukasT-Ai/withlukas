@@ -5,7 +5,7 @@ import { useState } from "react";
 const serviceOptions = [
   "Telecom Consulting",
   "Sales Automation",
-  "App Development",
+  "Web & App Development",
   "AI Integration",
   "SEO & Web Presence",
   "Workflow Automation",

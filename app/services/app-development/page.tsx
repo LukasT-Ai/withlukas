@@ -2,10 +2,12 @@ import type { Metadata } from "next";
 import ServicePage from "../../components/service-page";
 
 export const metadata: Metadata = {
-  title: "App Development | Full-Stack Web Apps, Dashboards & Tools",
+  title: "Web & App Development | Websites, Web Apps, Dashboards & Tools",
   description:
-    "Custom web applications, dashboards, and internal tools built with Next.js, React, TypeScript, and Node.js. Production-ready software designed around your workflow, not a template.",
+    "Custom websites, web applications, dashboards, and internal tools built with Next.js, React, TypeScript, and Node.js. From business websites to full-stack platforms — production-ready from day one.",
   keywords: [
+    "website development",
+    "web design Atlanta",
     "custom app development",
     "web application development",
     "full-stack development",
@@ -13,15 +15,15 @@ export const metadata: Metadata = {
     "React developer",
     "TypeScript developer",
     "custom dashboard development",
-    "internal tools development",
+    "business website development",
     "Node.js developer",
     "custom software Atlanta",
     "withlukas",
   ],
   openGraph: {
-    title: "App Development | withlukas",
+    title: "Web & App Development | withlukas",
     description:
-      "Full-stack web apps, dashboards, and tools built with modern frameworks. Production-ready from day one.",
+      "Websites, web apps, dashboards, and tools built with modern frameworks. Production-ready from day one.",
     url: "https://withlukas.com/services/app-development",
   },
   alternates: {
@@ -35,19 +37,19 @@ const jsonLd = {
     {
       "@type": "Service",
       "@id": "https://withlukas.com/services/app-development#service",
-      name: "App Development",
+      name: "Web & App Development",
       provider: { "@id": "https://withlukas.com/#organization" },
-      serviceType: "Custom App Development",
+      serviceType: "Web & App Development",
       areaServed: ["United States", "Germany"],
       description:
-        "Full-stack web application development including dashboards, internal tools, and production systems using Next.js, React, TypeScript, and Node.js.",
+        "Custom websites and full-stack web application development including business sites, dashboards, internal tools, and production systems using Next.js, React, TypeScript, and Node.js.",
       url: "https://withlukas.com/services/app-development",
     },
     {
       "@type": "WebPage",
       "@id": "https://withlukas.com/services/app-development#webpage",
       url: "https://withlukas.com/services/app-development",
-      name: "App Development | withlukas",
+      name: "Web & App Development | withlukas",
       isPartOf: { "@id": "https://withlukas.com/#website" },
       about: {
         "@id": "https://withlukas.com/services/app-development#service",
@@ -59,11 +61,17 @@ const jsonLd = {
 export default function AppDevelopmentPage() {
   return (
     <ServicePage
-      badge="App Development"
-      headline="Custom Software That Fits Your Workflow"
-      subheadline="Full-stack web apps, dashboards, and internal tools built with modern frameworks. Designed around how you actually work, not how a template thinks you should."
-      intro="Off-the-shelf software forces you into someone else's workflow. We build custom applications — dashboards, portals, internal tools, and production systems — using Next.js, React, TypeScript, and Node.js. Every app is built to solve your specific problem, deploy to your infrastructure, and scale with your team."
+      badge="Web & App Development"
+      headline="Websites & Custom Software Built For You"
+      subheadline="From professional business websites to full-stack web applications, dashboards, and internal tools — built with modern frameworks, designed around how you actually work."
+      intro="Whether you need a polished business website, a custom web application, or an internal dashboard — we build it. Using Next.js, React, TypeScript, and Node.js, every project is designed to solve your specific problem, deploy to production-grade hosting, and scale with your team. No templates, no page builders — just clean, fast, custom-built software."
       features={[
+        {
+          icon: "\u{1F310}",
+          title: "Websites",
+          description:
+            "Professional business websites, landing pages, and marketing sites. Fast, responsive, SEO-optimized, and built to convert visitors into customers.",
+        },
         {
           icon: "\u{1F5A5}\u{FE0F}",
           title: "Web Applications",
