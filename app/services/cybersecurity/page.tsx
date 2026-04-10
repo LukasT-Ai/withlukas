@@ -66,8 +66,8 @@ export default function CybersecurityPage() {
     <ServicePage
       badge="Cybersecurity"
       headline="Security That Scales With Your Business"
-      subheadline="From penetration testing to 24/7 monitoring, we provide enterprise-grade cybersecurity services at competitive prices — whether you have 2 employees or 2,000."
-      intro="Cyber threats don't discriminate by company size. A 5-person office is just as vulnerable as a Fortune 500 — often more so. We deliver real cybersecurity services that scale to fit your environment and budget: penetration testing, round-the-clock SOC monitoring, cloud and network security, incident response, and compliance consulting. No bloated contracts, no one-size-fits-all packages — just the protection your business actually needs."
+      subheadline="Through our trusted cybersecurity partners, we provide enterprise-grade security services at competitive prices — whether you have 2 employees or 2,000."
+      intro="Cyber threats don't discriminate by company size. A 5-person office is just as vulnerable as a Fortune 500 — often more so. Through our vetted third-party cybersecurity partners, we connect you with real security expertise that scales to fit your environment and budget: penetration testing, round-the-clock SOC monitoring, cloud and network security, incident response, and compliance consulting. We manage the relationship and coordination so you get seamless protection without the complexity of sourcing it yourself."
       features={[
         {
           icon: "\u{1F50D}",
@@ -133,10 +133,10 @@ export default function CybersecurityPage() {
         },
       ]}
       whyUs={[
-        "Enterprise-grade cybersecurity services available at competitive prices — scaled to your business size, not padded for a Fortune 500 budget.",
-        "Full spectrum coverage: penetration testing, 24/7 SOC, cloud security, application security, incident response, and compliance — all from one provider.",
+        "Delivered through vetted third-party cybersecurity partners — you get specialized security expertise without the overhead of sourcing and managing vendors yourself.",
+        "Full spectrum coverage: penetration testing, 24/7 SOC, cloud security, application security, incident response, and compliance — coordinated through one point of contact.",
         "We serve every size — from a 2-person startup to enterprise environments with thousands of endpoints. No business is too small to be secure.",
-        "Industry-specific expertise across financial services, healthcare, government, telecommunications, and education — we understand your compliance landscape.",
+        "Industry-specific expertise across financial services, healthcare, government, telecommunications, and education — our partners understand your compliance landscape.",
       ]}
       ctaText="Ready to Secure Your Business?"
       jsonLd={jsonLd}

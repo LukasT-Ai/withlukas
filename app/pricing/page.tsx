@@ -203,7 +203,7 @@ const services = [
     name: "Cybersecurity",
     rate: null,
     description:
-      "Penetration testing, SOC monitoring, cloud security, incident response, and compliance consulting.",
+      "Penetration testing, SOC monitoring, cloud security, incident response, and compliance consulting — delivered through our trusted security partners.",
     tiers: [],
   },
   {

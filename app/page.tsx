@@ -509,7 +509,7 @@ export default function Home() {
             <ServiceCard
               icon="&#128274;"
               title="Cybersecurity"
-              description="Penetration testing, 24/7 SOC monitoring, cloud and network security, incident response, and compliance — scaled from small offices to enterprise."
+              description="Penetration testing, 24/7 SOC monitoring, cloud and network security, incident response, and compliance — delivered through our trusted security partners, scaled from small offices to enterprise."
               href="/services/cybersecurity"
             />
             <ServiceCard
