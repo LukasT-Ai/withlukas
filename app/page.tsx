@@ -1,6 +1,7 @@
 import Link from "next/link";
 import Navbar from "./components/navbar";
 import Footer from "./components/footer";
+import ContactForm from "./components/contact-form";
 
 /* ── Project Data ─────────────────────────────────────────── */
 
@@ -514,19 +515,12 @@ export default function Home() {
 
       {/* Contact */}
       <section id="contact" className="py-20 px-6 border-t border-[var(--card-border)]">
-        <div className="max-w-4xl mx-auto text-center">
-          <h2 className="text-3xl font-bold mb-3">Let&apos;s Build Something</h2>
-          <p className="text-zinc-400 max-w-xl mx-auto mb-8">
-            Have a process that needs automating? A tool that needs building?
-            A workflow that&apos;s eating your team&apos;s time? Let&apos;s talk.
-          </p>
-          <a
-            href="mailto:Lukas.T@withlukas.com"
-            className="inline-block bg-blue-500 hover:bg-blue-400 text-white px-8 py-3 rounded-lg text-sm font-medium transition-colors"
-          >
-            Lukas.T@withlukas.com
-          </a>
-          <p className="text-xs text-zinc-600 mt-4">Atlanta, GA &middot; Available for consulting and custom builds</p>
+        <div className="max-w-4xl mx-auto">
+          <ContactForm
+            heading="Let's Build Something"
+            subheading="Have a process that needs automating? A tool that needs building? A workflow that's eating your team's time? Let's talk."
+          />
+          <p className="text-xs text-zinc-600 mt-4 text-center">Atlanta, GA &middot; Available for consulting and custom builds</p>
         </div>
       </section>
 

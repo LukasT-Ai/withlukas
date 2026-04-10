@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import Navbar from "../components/navbar";
 import Footer from "../components/footer";
 import PricingClient from "./pricing-client";
+import ContactForm from "../components/contact-form";
 
 export const metadata: Metadata = {
   title: "Pricing",
@@ -451,24 +452,21 @@ export default function PricingPage() {
         </div>
       </section>
 
-      {/* Custom CTA */}
+      {/* Custom Quote Form */}
       <section className="py-16 px-6 border-t border-[var(--card-border)]">
-        <div className="max-w-4xl mx-auto text-center">
-          <h2 className="text-2xl font-bold mb-3">Need Something Different?</h2>
-          <p className="text-zinc-400 mb-3">
+        <div className="max-w-4xl mx-auto">
+          <p className="text-zinc-400 text-center mb-2">
             Every business is unique. These packages are starting points.
             We also offer smaller scoped work starting from <strong className="text-[var(--foreground)]">$500</strong> for quick wins.
           </p>
-          <p className="text-zinc-500 text-sm mb-6">
+          <p className="text-zinc-500 text-sm text-center mb-8">
             50% deposit to start. Milestone-based payments on larger projects.
             10% discount on annual retainer commitments.
           </p>
-          <a
-            href="mailto:Lukas.T@withlukas.com"
-            className="inline-block bg-blue-500 hover:bg-blue-400 text-white px-8 py-3 rounded-lg text-sm font-medium transition-colors"
-          >
-            Request a Custom Quote
-          </a>
+          <ContactForm
+            heading="Request a Custom Quote"
+            subheading="Tell us what you need and we'll put together a tailored proposal."
+          />
         </div>
       </section>
 
