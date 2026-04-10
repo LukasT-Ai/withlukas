@@ -1,5 +1,5 @@
 import { NextRequest, NextResponse } from "next/server";
-import nodemailer from "nodemailer";
+import { Resend } from "resend";
 
 export const dynamic = "force-dynamic";
 export const runtime = "nodejs";
@@ -12,23 +12,16 @@ export async function POST(req: NextRequest) {
       return NextResponse.json({ error: "Missing required fields" }, { status: 400 });
     }
 
-    const transporter = nodemailer.createTransport({
-      host: "smtp.gmail.com",
-      port: 587,
-      secure: false,
-      auth: {
-        user: process.env.SMTP_USER,
-        pass: process.env.SMTP_PASS,
-      },
-      connectionTimeout: 10000,
-      greetingTimeout: 10000,
-      socketTimeout: 10000,
-    });
+    if (!process.env.RESEND_API_KEY) {
+      return NextResponse.json({ error: "Email service not configured" }, { status: 503 });
+    }
+
+    const resend = new Resend(process.env.RESEND_API_KEY);
 
     const serviceList = services.map((s: string) => `  - ${s}`).join("\n");
 
-    await transporter.sendMail({
-      from: `"WithLukas Contact Form" <${process.env.SMTP_USER}>`,
+    await resend.emails.send({
+      from: "WithLukas Contact Form <noreply@withlukas.com>",
       to: "lamintraore@withlukas.com",
       replyTo: email,
       subject: `New Inquiry: ${services.join(", ")} - ${name}`,
