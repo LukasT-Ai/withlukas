@@ -6,25 +6,27 @@ import PricingClient from "./pricing-client";
 export const metadata: Metadata = {
   title: "Pricing",
   description:
-    "Transparent pricing for telecom consulting, sales automation, app development, AI integration, SEO, and workflow automation services.",
+    "Competitive pricing for telecom consulting, sales automation, app development, AI integration, SEO, and workflow automation services in Atlanta, GA.",
   keywords: [
-    "consulting pricing",
-    "app development cost",
+    "consulting pricing Atlanta",
+    "app development cost Georgia",
     "telecom consulting rates",
     "sales automation pricing",
     "AI integration cost",
+    "affordable consulting",
   ],
 };
 
 const services = [
   {
     name: "Telecom Consulting",
+    rate: 150,
     description:
       "Voice, data, network, and security advisory from an enterprise insider.",
     tiers: [
       {
-        name: "Starter",
-        price: 2500,
+        name: "Assessment",
+        price: 1500,
         label: "One-time",
         features: [
           "Network & vendor assessment",
@@ -34,8 +36,8 @@ const services = [
         ],
       },
       {
-        name: "Growth",
-        price: 7500,
+        name: "Strategy",
+        price: 5000,
         label: "One-time",
         popular: true,
         features: [
@@ -47,8 +49,8 @@ const services = [
         ],
       },
       {
-        name: "Enterprise",
-        price: 15000,
+        name: "Full Engagement",
+        price: 12000,
         label: "One-time",
         features: [
           "End-to-end network strategy",
@@ -62,12 +64,13 @@ const services = [
   },
   {
     name: "Sales Automation",
+    rate: 125,
     description:
       "Email outreach engines, follow-up sequences, and CRM dashboards.",
     tiers: [
       {
         name: "Starter",
-        price: 3000,
+        price: 2000,
         label: "One-time",
         features: [
           "Email template system",
@@ -78,7 +81,7 @@ const services = [
       },
       {
         name: "Growth",
-        price: 10000,
+        price: 6500,
         label: "One-time",
         popular: true,
         features: [
@@ -90,8 +93,8 @@ const services = [
         ],
       },
       {
-        name: "Enterprise",
-        price: 25000,
+        name: "Scale",
+        price: 15000,
         label: "One-time",
         features: [
           "Custom CRM integration",
@@ -105,23 +108,24 @@ const services = [
   },
   {
     name: "App Development",
+    rate: 125,
     description:
       "Full-stack web apps, dashboards, and tools built with modern frameworks.",
     tiers: [
       {
-        name: "Starter",
-        price: 5000,
+        name: "Landing Page",
+        price: 1500,
         label: "One-time",
         features: [
-          "Landing page or simple app",
+          "Professional website or landing page",
           "Responsive design",
           "Basic SEO setup",
-          "Deployment & hosting",
+          "Deployment & hosting config",
         ],
       },
       {
-        name: "Growth",
-        price: 15000,
+        name: "Web App",
+        price: 7500,
         label: "One-time",
         popular: true,
         features: [
@@ -133,8 +137,8 @@ const services = [
         ],
       },
       {
-        name: "Enterprise",
-        price: 50000,
+        name: "Platform",
+        price: 25000,
         label: "Starting at",
         features: [
           "Complex full-stack platform",
@@ -148,12 +152,13 @@ const services = [
   },
   {
     name: "AI Integration",
+    rate: 150,
     description:
       "Smart classification, scoring, and content generation for your business.",
     tiers: [
       {
-        name: "Starter",
-        price: 5000,
+        name: "Pilot",
+        price: 2500,
         label: "One-time",
         features: [
           "AI use-case assessment",
@@ -163,8 +168,8 @@ const services = [
         ],
       },
       {
-        name: "Growth",
-        price: 15000,
+        name: "Production",
+        price: 8000,
         label: "One-time",
         popular: true,
         features: [
@@ -177,7 +182,7 @@ const services = [
       },
       {
         name: "Enterprise",
-        price: 50000,
+        price: 20000,
         label: "Starting at",
         features: [
           "Enterprise AI strategy",
@@ -191,12 +196,13 @@ const services = [
   },
   {
     name: "SEO & Web Presence",
+    rate: 100,
     description:
       "Technical SEO, structured data, and content strategy to get found on Google.",
     tiers: [
       {
-        name: "Starter",
-        price: 2000,
+        name: "Audit",
+        price: 750,
         label: "One-time",
         features: [
           "SEO audit & recommendations",
@@ -206,8 +212,8 @@ const services = [
         ],
       },
       {
-        name: "Growth",
-        price: 5000,
+        name: "Optimize",
+        price: 3000,
         label: "One-time",
         popular: true,
         features: [
@@ -219,8 +225,8 @@ const services = [
         ],
       },
       {
-        name: "Enterprise",
-        price: 10000,
+        name: "Dominate",
+        price: 7500,
         label: "One-time",
         features: [
           "Multi-site SEO strategy",
@@ -234,12 +240,13 @@ const services = [
   },
   {
     name: "Workflow Automation",
+    rate: 115,
     description:
       "Connect your tools, eliminate manual data entry, and automate repetitive tasks.",
     tiers: [
       {
-        name: "Starter",
-        price: 2500,
+        name: "Quick Win",
+        price: 1500,
         label: "One-time",
         features: [
           "Process assessment",
@@ -249,8 +256,8 @@ const services = [
         ],
       },
       {
-        name: "Growth",
-        price: 7500,
+        name: "Streamline",
+        price: 5000,
         label: "One-time",
         popular: true,
         features: [
@@ -262,8 +269,8 @@ const services = [
         ],
       },
       {
-        name: "Enterprise",
-        price: 20000,
+        name: "Transform",
+        price: 15000,
         label: "One-time",
         features: [
           "Enterprise workflow suite",
@@ -277,6 +284,12 @@ const services = [
   },
 ];
 
+const retainers = [
+  { name: "Lite", hours: "5-10 hrs/mo", price: 500, label: "from" },
+  { name: "Standard", hours: "15-20 hrs/mo", price: 1500, label: "from" },
+  { name: "Premium", hours: "30-40 hrs/mo", price: 3000, label: "from" },
+];
+
 export default function PricingPage() {
   return (
     <main className="min-h-screen flex flex-col">
@@ -288,84 +301,167 @@ export default function PricingPage() {
             Pricing
           </span>
           <h1 className="text-4xl md:text-5xl font-bold mb-4">
-            Transparent Pricing
+            Straightforward Pricing
           </h1>
           <p className="text-zinc-400 max-w-2xl mx-auto text-lg">
-            Every engagement is scoped to your needs. Pick a starting point
-            below, or{" "}
+            No agency markup. No surprise invoices. Pick a package or{" "}
             <a
               href="mailto:Lukas.T@withlukas.com"
               className="text-blue-400 hover:text-blue-300"
             >
-              reach out
+              request a custom quote
             </a>{" "}
-            for a custom quote.
+            for exactly what you need.
           </p>
         </div>
       </section>
 
-      <section className="pb-20 px-6">
-        <div className="max-w-6xl mx-auto space-y-20">
-          {services.map((service) => (
-            <div key={service.name}>
-              <div className="mb-8">
-                <h2 className="text-2xl font-bold mb-2">{service.name}</h2>
-                <p className="text-zinc-400">{service.description}</p>
+      {/* Hourly Rates */}
+      <section className="pb-16 px-6">
+        <div className="max-w-4xl mx-auto">
+          <h2 className="text-2xl font-bold mb-2 text-center">Hourly Rates</h2>
+          <p className="text-zinc-400 text-center mb-8">
+            Prefer to work on an hourly basis? Here are our rates by service.
+          </p>
+          <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-4">
+            {services.map((s) => (
+              <div
+                key={s.name}
+                className="bg-[var(--card)] border border-[var(--card-border)] rounded-xl p-5 text-center"
+              >
+                <p className="text-sm text-zinc-400 mb-1">{s.name}</p>
+                <p className="text-2xl font-bold">
+                  ${s.rate}
+                  <span className="text-sm text-zinc-500 font-normal">
+                    /hr
+                  </span>
+                </p>
               </div>
-              <div className="grid md:grid-cols-3 gap-5">
-                {service.tiers.map((tier) => (
-                  <div
-                    key={tier.name}
-                    className={`bg-[var(--card)] border rounded-xl p-6 flex flex-col ${
-                      tier.popular
-                        ? "border-blue-500 ring-1 ring-blue-500/30"
-                        : "border-[var(--card-border)]"
-                    }`}
-                  >
-                    {tier.popular && (
-                      <span className="text-xs text-blue-400 font-medium mb-2">
-                        Most Popular
-                      </span>
-                    )}
-                    <h3 className="text-lg font-semibold mb-1">{tier.name}</h3>
-                    <div className="mb-4">
-                      <span className="text-3xl font-bold">
-                        ${tier.price.toLocaleString()}
-                      </span>
-                      <span className="text-zinc-500 text-sm ml-1">
-                        {tier.label}
-                      </span>
-                    </div>
-                    <ul className="space-y-2 mb-6 flex-1">
-                      {tier.features.map((f) => (
-                        <li
-                          key={f}
-                          className="text-sm text-zinc-400 flex items-start gap-2"
-                        >
-                          <span className="text-blue-400 mt-0.5">&#10003;</span>
-                          {f}
-                        </li>
-                      ))}
-                    </ul>
-                    <PricingClient
-                      service={service.name}
-                      tier={tier.name}
-                      popular={tier.popular}
-                    />
-                  </div>
-                ))}
-              </div>
-            </div>
-          ))}
+            ))}
+          </div>
         </div>
       </section>
 
+      {/* Monthly Retainers */}
+      <section className="pb-16 px-6 border-t border-[var(--card-border)] pt-16">
+        <div className="max-w-4xl mx-auto">
+          <h2 className="text-2xl font-bold mb-2 text-center">
+            Monthly Retainers
+          </h2>
+          <p className="text-zinc-400 text-center mb-8">
+            Ongoing support at a discounted rate. Mix and match any service.
+          </p>
+          <div className="grid md:grid-cols-3 gap-5">
+            {retainers.map((r) => (
+              <div
+                key={r.name}
+                className={`bg-[var(--card)] border rounded-xl p-6 text-center ${
+                  r.name === "Standard"
+                    ? "border-blue-500 ring-1 ring-blue-500/30"
+                    : "border-[var(--card-border)]"
+                }`}
+              >
+                {r.name === "Standard" && (
+                  <span className="text-xs text-blue-400 font-medium mb-2 block">
+                    Most Popular
+                  </span>
+                )}
+                <h3 className="text-lg font-semibold">{r.name}</h3>
+                <p className="text-zinc-500 text-sm mb-3">{r.hours}</p>
+                <p className="text-3xl font-bold mb-1">
+                  ${r.price.toLocaleString()}
+                  <span className="text-sm text-zinc-500 font-normal">
+                    /mo
+                  </span>
+                </p>
+                <p className="text-xs text-zinc-600">{r.label}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Project-Based Packages */}
+      <section className="pb-20 px-6 border-t border-[var(--card-border)] pt-16">
+        <div className="max-w-6xl mx-auto">
+          <h2 className="text-2xl font-bold mb-2 text-center">
+            Project Packages
+          </h2>
+          <p className="text-zinc-400 text-center mb-12">
+            Fixed-price engagements with clear deliverables. Pay by milestone, not by the hour.
+          </p>
+
+          <div className="space-y-20">
+            {services.map((service) => (
+              <div key={service.name}>
+                <div className="mb-8">
+                  <h3 className="text-xl font-bold mb-1">{service.name}</h3>
+                  <p className="text-zinc-400 text-sm">{service.description}</p>
+                </div>
+                <div className="grid md:grid-cols-3 gap-5">
+                  {service.tiers.map((tier) => (
+                    <div
+                      key={tier.name}
+                      className={`bg-[var(--card)] border rounded-xl p-6 flex flex-col ${
+                        tier.popular
+                          ? "border-blue-500 ring-1 ring-blue-500/30"
+                          : "border-[var(--card-border)]"
+                      }`}
+                    >
+                      {tier.popular && (
+                        <span className="text-xs text-blue-400 font-medium mb-2">
+                          Most Popular
+                        </span>
+                      )}
+                      <h4 className="text-lg font-semibold mb-1">
+                        {tier.name}
+                      </h4>
+                      <div className="mb-4">
+                        <span className="text-3xl font-bold">
+                          ${tier.price.toLocaleString()}
+                        </span>
+                        <span className="text-zinc-500 text-sm ml-1">
+                          {tier.label}
+                        </span>
+                      </div>
+                      <ul className="space-y-2 mb-6 flex-1">
+                        {tier.features.map((f) => (
+                          <li
+                            key={f}
+                            className="text-sm text-zinc-400 flex items-start gap-2"
+                          >
+                            <span className="text-blue-400 mt-0.5">
+                              &#10003;
+                            </span>
+                            {f}
+                          </li>
+                        ))}
+                      </ul>
+                      <PricingClient
+                        service={service.name}
+                        tier={tier.name}
+                        popular={tier.popular}
+                      />
+                    </div>
+                  ))}
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Custom CTA */}
       <section className="py-16 px-6 border-t border-[var(--card-border)]">
         <div className="max-w-4xl mx-auto text-center">
-          <h2 className="text-2xl font-bold mb-3">Need Something Custom?</h2>
-          <p className="text-zinc-400 mb-6">
-            Most projects are unique. These tiers are starting points — we&apos;ll
-            scope the exact solution to your business.
+          <h2 className="text-2xl font-bold mb-3">Need Something Different?</h2>
+          <p className="text-zinc-400 mb-3">
+            Every business is unique. These packages are starting points.
+            We also offer smaller scoped work starting from <strong className="text-[var(--foreground)]">$500</strong> for quick wins.
+          </p>
+          <p className="text-zinc-500 text-sm mb-6">
+            50% deposit to start. Milestone-based payments on larger projects.
+            10% discount on annual retainer commitments.
           </p>
           <a
             href="mailto:Lukas.T@withlukas.com"

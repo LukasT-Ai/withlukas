@@ -47,12 +47,12 @@ export async function POST(req: NextRequest) {
 
 function getPrice(service: string, tier: string): number {
   const prices: Record<string, Record<string, number>> = {
-    "Telecom Consulting": { Starter: 250000, Growth: 750000, Enterprise: 1500000 },
-    "Sales Automation": { Starter: 300000, Growth: 1000000, Enterprise: 2500000 },
-    "App Development": { Starter: 500000, Growth: 1500000, Enterprise: 5000000 },
-    "AI Integration": { Starter: 500000, Growth: 1500000, Enterprise: 5000000 },
-    "SEO & Web Presence": { Starter: 200000, Growth: 500000, Enterprise: 1000000 },
-    "Workflow Automation": { Starter: 250000, Growth: 750000, Enterprise: 2000000 },
+    "Telecom Consulting": { Assessment: 150000, Strategy: 500000, "Full Engagement": 1200000 },
+    "Sales Automation": { Starter: 200000, Growth: 650000, Scale: 1500000 },
+    "App Development": { "Landing Page": 150000, "Web App": 750000, Platform: 2500000 },
+    "AI Integration": { Pilot: 250000, Production: 800000, Enterprise: 2000000 },
+    "SEO & Web Presence": { Audit: 75000, Optimize: 300000, Dominate: 750000 },
+    "Workflow Automation": { "Quick Win": 150000, Streamline: 500000, Transform: 1500000 },
   };
   return prices[service]?.[tier] ?? 250000;
 }
