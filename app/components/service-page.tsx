@@ -153,12 +153,12 @@ export default function ServicePage({
               Tell us what you&apos;re working with and where the pain is. We&apos;ll tell you what&apos;s possible.
             </p>
             <div className="flex items-center justify-center gap-4 flex-wrap">
-              <a
-                href="mailto:lamintraore@withlukas.com"
+              <Link
+                href="/#contact"
                 className="bg-blue-500 hover:bg-blue-400 text-white px-8 py-3 rounded-lg text-sm font-medium transition-colors"
               >
-                lamintraore@withlukas.com
-              </a>
+                Get in Touch
+              </Link>
               <Link
                 href="/#services"
                 className="border border-[var(--card-border)] hover:border-zinc-600 text-[var(--foreground)] px-6 py-3 rounded-lg text-sm font-medium transition-colors"

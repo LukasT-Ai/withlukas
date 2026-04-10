@@ -17,9 +17,9 @@ export default function Footer() {
             GitHub
           </a>
           <span>&middot;</span>
-          <a href="mailto:lamintraore@withlukas.com" className="hover:text-[var(--foreground)] transition-colors">
-            Email
-          </a>
+          <Link href="/#contact" className="hover:text-[var(--foreground)] transition-colors">
+            Contact
+          </Link>
           <span>&middot;</span>
           <Link href="/#services" className="hover:text-[var(--foreground)] transition-colors">
             Services
