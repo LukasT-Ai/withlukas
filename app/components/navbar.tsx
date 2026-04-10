@@ -8,6 +8,7 @@ const services = [
   { name: "Sales Automation", href: "/services/sales-automation" },
   { name: "Web & App Development", href: "/services/app-development" },
   { name: "AI Integration", href: "/services/ai-integration" },
+  { name: "Cybersecurity", href: "/services/cybersecurity" },
   { name: "SEO & Web Presence", href: "/services/seo-web-presence" },
   { name: "Workflow Automation", href: "/services/workflow-automation" },
 ];

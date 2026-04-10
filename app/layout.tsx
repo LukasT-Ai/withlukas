@@ -27,6 +27,8 @@ export const metadata: Metadata = {
     "AI integration Atlanta",
     "sales automation Georgia",
     "telecom consulting Atlanta",
+    "cybersecurity Atlanta GA",
+    "penetration testing Atlanta",
     "SEO services Atlanta GA",
     "workflow automation Atlanta",
     "small business consulting Atlanta",

@@ -7,6 +7,7 @@ const serviceOptions = [
   "Sales Automation",
   "Web & App Development",
   "AI Integration",
+  "Cybersecurity",
   "SEO & Web Presence",
   "Workflow Automation",
   "Other",

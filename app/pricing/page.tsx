@@ -200,6 +200,50 @@ const services = [
     ],
   },
   {
+    name: "Cybersecurity",
+    rate: 175,
+    description:
+      "Penetration testing, SOC monitoring, cloud security, incident response, and compliance consulting.",
+    tiers: [
+      {
+        name: "Assessment",
+        price: 2500,
+        label: "One-time",
+        features: [
+          "Security posture assessment",
+          "Vulnerability scan & report",
+          "Risk prioritization",
+          "Remediation roadmap",
+        ],
+      },
+      {
+        name: "Protection",
+        price: 8000,
+        label: "One-time",
+        popular: true,
+        features: [
+          "Penetration testing",
+          "Network security hardening",
+          "Cloud security review",
+          "Incident response plan",
+          "30 days of monitoring",
+        ],
+      },
+      {
+        name: "Enterprise",
+        price: 20000,
+        label: "Starting at",
+        features: [
+          "Full security program",
+          "24/7 SOC monitoring",
+          "GRC & compliance consulting",
+          "Application security review",
+          "90 days of managed security",
+        ],
+      },
+    ],
+  },
+  {
     name: "SEO & Web Presence",
     rate: 100,
     description:

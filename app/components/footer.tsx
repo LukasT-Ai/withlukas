@@ -19,6 +19,7 @@ export default function Footer() {
                 <Link href="/services/sales-automation" className="text-xs text-zinc-600 hover:text-[var(--foreground)] transition-colors">Sales Automation</Link>
                 <Link href="/services/app-development" className="text-xs text-zinc-600 hover:text-[var(--foreground)] transition-colors">Web & App Development</Link>
                 <Link href="/services/ai-integration" className="text-xs text-zinc-600 hover:text-[var(--foreground)] transition-colors">AI Integration</Link>
+                <Link href="/services/cybersecurity" className="text-xs text-zinc-600 hover:text-[var(--foreground)] transition-colors">Cybersecurity</Link>
                 <Link href="/services/seo-web-presence" className="text-xs text-zinc-600 hover:text-[var(--foreground)] transition-colors">SEO & Web Presence</Link>
                 <Link href="/services/workflow-automation" className="text-xs text-zinc-600 hover:text-[var(--foreground)] transition-colors">Workflow Automation</Link>
               </div>

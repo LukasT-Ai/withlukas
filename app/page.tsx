@@ -280,6 +280,10 @@ const jsonLd = {
         "AI Integration",
         "SEO",
         "Workflow Automation",
+        "Cybersecurity",
+        "Penetration Testing",
+        "SOC Monitoring",
+        "Cloud Security",
         "Email Outreach",
         "Performance Tracking",
         "Telecommunications Consulting",
@@ -337,6 +341,7 @@ const jsonLd = {
         "Sales Automation",
         "Web & App Development",
         "AI Integration",
+        "Cybersecurity Services",
         "SEO Optimization",
         "Workflow Automation",
         "Telecommunications Consulting",
@@ -353,7 +358,7 @@ const jsonLd = {
           name: "What services does withlukas offer in Atlanta, GA?",
           acceptedAnswer: {
             "@type": "Answer",
-            text: "withlukas offers telecom consulting, sales automation, custom web and app development, AI integration, SEO and web presence optimization, and workflow automation for small and medium businesses in Atlanta, Georgia and beyond.",
+            text: "withlukas offers telecom consulting, sales automation, custom web and app development, AI integration, cybersecurity (penetration testing, SOC monitoring, cloud security), SEO and web presence optimization, and workflow automation for small and medium businesses in Atlanta, Georgia and beyond.",
           },
         },
         {
@@ -500,6 +505,12 @@ export default function Home() {
               title="AI Integration"
               description="Smart classification, scoring, evaluation, and content generation. AI that does the heavy lifting while you make the decisions."
               href="/services/ai-integration"
+            />
+            <ServiceCard
+              icon="&#128274;"
+              title="Cybersecurity"
+              description="Penetration testing, 24/7 SOC monitoring, cloud and network security, incident response, and compliance — scaled from small offices to enterprise."
+              href="/services/cybersecurity"
             />
             <ServiceCard
               icon="&#128270;"

@@ -6,6 +6,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     "sales-automation",
     "app-development",
     "ai-integration",
+    "cybersecurity",
     "seo-web-presence",
     "workflow-automation",
   ];

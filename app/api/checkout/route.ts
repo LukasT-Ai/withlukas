@@ -52,6 +52,7 @@ function getPrice(service: string, tier: string): number {
     "Sales Automation": { Starter: 200000, Growth: 650000, Scale: 1500000 },
     "Web & App Development": { Website: 150000, "Web App": 750000, Platform: 2500000 },
     "AI Integration": { Pilot: 250000, Production: 800000, Enterprise: 2000000 },
+    "Cybersecurity": { Assessment: 250000, Protection: 800000, Enterprise: 2000000 },
     "SEO & Web Presence": { Audit: 75000, Optimize: 300000, Dominate: 750000 },
     "Workflow Automation": { "Quick Win": 150000, Streamline: 500000, Transform: 1500000 },
   };
