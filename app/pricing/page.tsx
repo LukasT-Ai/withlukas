@@ -201,47 +201,10 @@ const services = [
   },
   {
     name: "Cybersecurity",
-    rate: 175,
+    rate: null,
     description:
       "Penetration testing, SOC monitoring, cloud security, incident response, and compliance consulting.",
-    tiers: [
-      {
-        name: "Assessment",
-        price: 2500,
-        label: "One-time",
-        features: [
-          "Security posture assessment",
-          "Vulnerability scan & report",
-          "Risk prioritization",
-          "Remediation roadmap",
-        ],
-      },
-      {
-        name: "Protection",
-        price: 8000,
-        label: "One-time",
-        popular: true,
-        features: [
-          "Penetration testing",
-          "Network security hardening",
-          "Cloud security review",
-          "Incident response plan",
-          "30 days of monitoring",
-        ],
-      },
-      {
-        name: "Enterprise",
-        price: 20000,
-        label: "Starting at",
-        features: [
-          "Full security program",
-          "24/7 SOC monitoring",
-          "GRC & compliance consulting",
-          "Application security review",
-          "90 days of managed security",
-        ],
-      },
-    ],
+    tiers: [],
   },
   {
     name: "SEO & Web Presence",
@@ -373,7 +336,7 @@ export default function PricingPage() {
             Prefer to work on an hourly basis? Here are our rates by service.
           </p>
           <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-4">
-            {services.map((s) => (
+            {services.filter((s) => s.rate !== null).map((s) => (
               <div
                 key={s.name}
                 className="bg-[var(--card)] border border-[var(--card-border)] rounded-xl p-5 text-center"
@@ -447,6 +410,7 @@ export default function PricingPage() {
                   <h3 className="text-xl font-bold mb-1">{service.name}</h3>
                   <p className="text-zinc-400 text-sm">{service.description}</p>
                 </div>
+                {service.tiers.length > 0 ? (
                 <div className="grid md:grid-cols-3 gap-5">
                   {service.tiers.map((tier) => (
                     <div
@@ -494,6 +458,19 @@ export default function PricingPage() {
                     </div>
                   ))}
                 </div>
+                ) : (
+                <div className="bg-[var(--card)] border border-[var(--card-border)] rounded-xl p-8 text-center max-w-lg">
+                  <p className="text-zinc-400 mb-4">
+                    Pricing varies based on your environment, scope, and compliance needs.
+                  </p>
+                  <a
+                    href="#quote"
+                    className="inline-block bg-blue-500 hover:bg-blue-400 text-white px-6 py-2.5 rounded-lg text-sm font-medium transition-colors"
+                  >
+                    Contact Us for Pricing
+                  </a>
+                </div>
+                )}
               </div>
             ))}
           </div>
