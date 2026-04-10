@@ -255,7 +255,6 @@ const jsonLd = {
       url: "https://withlukas.com",
       logo: "https://www.withlukas.com/logo-square.png",
       image: "https://www.withlukas.com/logo-square.png",
-      telephone: "+1-404-234-0448",
       email: "lamintraore@withlukas.com",
       founder: {
         "@type": "Person",

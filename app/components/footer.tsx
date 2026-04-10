@@ -39,7 +39,7 @@ export default function Footer() {
             &copy; {new Date().getFullYear()} withlukas. All rights reserved.
           </p>
           <p className="text-xs text-zinc-700">
-            Atlanta, GA &middot; (404) 234-0448
+            Atlanta, GA
           </p>
         </div>
       </div>
