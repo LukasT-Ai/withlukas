@@ -33,8 +33,8 @@ export async function POST(req: NextRequest) {
         },
       ],
       mode: "payment",
-      success_url: `${req.nextUrl.origin}/payment/success?session_id={CHECKOUT_SESSION_ID}`,
-      cancel_url: `${req.nextUrl.origin}/payment/cancel`,
+      success_url: `https://www.withlukas.com/payment/success?session_id={CHECKOUT_SESSION_ID}`,
+      cancel_url: `https://www.withlukas.com/payment/cancel`,
       metadata: { service, tier },
     });
 
