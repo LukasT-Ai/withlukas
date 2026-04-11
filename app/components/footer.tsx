@@ -1,4 +1,5 @@
 import Link from "next/link";
+import Newsletter from "./newsletter";
 
 export default function Footer() {
   return (
@@ -28,6 +29,7 @@ export default function Footer() {
               <p className="text-xs font-medium text-zinc-400 mb-2">Company</p>
               <div className="flex flex-col gap-1.5">
                 <Link href="/pricing" className="text-xs text-zinc-600 hover:text-[var(--foreground)] transition-colors">Pricing</Link>
+                <Link href="/blog" className="text-xs text-zinc-600 hover:text-[var(--foreground)] transition-colors">Blog</Link>
                 <Link href="/#work" className="text-xs text-zinc-600 hover:text-[var(--foreground)] transition-colors">Our Work</Link>
                 <Link href="/#about" className="text-xs text-zinc-600 hover:text-[var(--foreground)] transition-colors">About</Link>
                 <Link href="/#contact" className="text-xs text-zinc-600 hover:text-[var(--foreground)] transition-colors">Contact</Link>
@@ -35,6 +37,11 @@ export default function Footer() {
             </div>
           </div>
         </div>
+        <div className="mb-8">
+          <p className="text-xs font-medium text-zinc-400 mb-3">Stay Updated</p>
+          <Newsletter />
+        </div>
+
         <div className="border-t border-[var(--card-border)] pt-6 flex flex-col sm:flex-row items-center justify-between gap-3">
           <p className="text-xs text-zinc-600">
             &copy; {new Date().getFullYear()} withlukas. All rights reserved.

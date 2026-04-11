@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
+import GoogleAnalytics from "./components/google-analytics";
 import "./globals.css";
 
 const geistSans = Geist({
@@ -66,6 +67,10 @@ export const metadata: Metadata = {
   },
   alternates: {
     canonical: "https://www.withlukas.com",
+    languages: {
+      en: "https://www.withlukas.com",
+      de: "https://www.withlukas.com/de",
+    },
   },
   icons: {
     icon: "/icon.svg",
@@ -84,7 +89,10 @@ export default function RootLayout({
       lang="en"
       className={`${geistSans.variable} ${geistMono.variable} h-full antialiased`}
     >
-      <body className="min-h-full flex flex-col">{children}</body>
+      <body className="min-h-full flex flex-col">
+        <GoogleAnalytics />
+        {children}
+      </body>
     </html>
   );
 }

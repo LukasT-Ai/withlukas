@@ -76,8 +76,14 @@ export default function Navbar() {
           <a href="/pricing" className="text-zinc-500 hover:text-[var(--foreground)] transition-colors">
             Pricing
           </a>
+          <a href="/blog" className="text-zinc-500 hover:text-[var(--foreground)] transition-colors">
+            Blog
+          </a>
           <a href="/#about" className="text-zinc-500 hover:text-[var(--foreground)] transition-colors">
             About
+          </a>
+          <a href="/de" className="text-zinc-600 hover:text-[var(--foreground)] transition-colors text-xs border border-[var(--card-border)] px-2 py-0.5 rounded">
+            DE
           </a>
           <a
             href="/#contact"
@@ -126,6 +132,9 @@ export default function Navbar() {
           </div>
           <a href="/pricing" className="block py-2 text-sm text-zinc-400 hover:text-[var(--foreground)]" onClick={() => setMobileOpen(false)}>
             Pricing
+          </a>
+          <a href="/blog" className="block py-2 text-sm text-zinc-400 hover:text-[var(--foreground)]" onClick={() => setMobileOpen(false)}>
+            Blog
           </a>
           <a href="/#about" className="block py-2 text-sm text-zinc-400 hover:text-[var(--foreground)]" onClick={() => setMobileOpen(false)}>
             About

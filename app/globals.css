@@ -64,3 +64,47 @@ html {
     linear-gradient(90deg, rgba(255,255,255,0.02) 1px, transparent 1px);
   background-size: 60px 60px;
 }
+
+/* Blog prose */
+.prose-custom p {
+  color: #a1a1aa;
+  font-size: 0.9375rem;
+  line-height: 1.75;
+  margin-bottom: 1.25rem;
+}
+.prose-custom h2 {
+  color: #ededed;
+  font-size: 1.375rem;
+  font-weight: 700;
+  margin-top: 2rem;
+  margin-bottom: 0.75rem;
+}
+.prose-custom a {
+  color: #3b82f6;
+  text-decoration: none;
+}
+.prose-custom a:hover {
+  color: #60a5fa;
+}
+.prose-custom strong {
+  color: #ededed;
+}
+.prose-custom em {
+  color: #a1a1aa;
+}
+.prose-custom ul, .prose-custom ol {
+  color: #a1a1aa;
+  font-size: 0.9375rem;
+  line-height: 1.75;
+  margin-bottom: 1.25rem;
+  padding-left: 1.5rem;
+}
+.prose-custom li {
+  margin-bottom: 0.5rem;
+}
+.prose-custom ul li {
+  list-style-type: disc;
+}
+.prose-custom ol li {
+  list-style-type: decimal;
+}

@@ -3,7 +3,7 @@ import Navbar from "./components/navbar";
 import Footer from "./components/footer";
 import ContactForm from "./components/contact-form";
 
-/* ── Project Data ─────────────────────────────────────────── */
+/* --- Project Data --- */
 
 type Project = {
   name: string;
@@ -151,7 +151,7 @@ const projects: Project[] = [
 
 const categories = ["All", "Sales Tools", "Web & App Development", "SEO & Web", "Workflow Automation"];
 
-/* ── Status Badge ─────────────────────────────────────────── */
+/* --- Status Badge --- */
 
 function StatusBadge({ status }: { status: Project["status"] }) {
   const styles = {
@@ -168,7 +168,7 @@ function StatusBadge({ status }: { status: Project["status"] }) {
   );
 }
 
-/* ── Project Card ─────────────────────────────────────────── */
+/* --- Project Card --- */
 
 function ProjectCard({ project }: { project: Project }) {
   return (
@@ -219,7 +219,7 @@ function ProjectCard({ project }: { project: Project }) {
   );
 }
 
-/* ── Stat Card ────────────────────────────────────────────── */
+/* --- Stat Card --- */
 
 function StatCard({ value, label }: { value: string; label: string }) {
   return (
@@ -230,7 +230,7 @@ function StatCard({ value, label }: { value: string; label: string }) {
   );
 }
 
-/* ── Service Card ─────────────────────────────────────────── */
+/* --- Service Card --- */
 
 function ServiceCard({ icon, title, description, href }: { icon: string; title: string; description: string; href: string }) {
   return (
@@ -243,7 +243,7 @@ function ServiceCard({ icon, title, description, href }: { icon: string; title: 
   );
 }
 
-/* ── Main Page ────────────────────────────────────────────── */
+/* --- Main Page --- */
 
 const jsonLd = {
   "@context": "https://schema.org",
@@ -561,6 +561,61 @@ export default function Home() {
                 <a href="https://www.lamintraore.com" target="_blank" rel="noopener noreferrer" className="text-blue-500 hover:text-blue-400 ml-1">lamintraore.com &rarr;</a>
               </p>
             </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Blog Preview */}
+      <section className="py-20 px-6 border-t border-[var(--card-border)]">
+        <div className="max-w-6xl mx-auto">
+          <div className="text-center mb-12">
+            <h2 className="text-3xl font-bold mb-3">Latest from the Blog</h2>
+            <p className="text-zinc-400 max-w-xl mx-auto">
+              Insights on automation, AI, web development, and growing your business with technology.
+            </p>
+          </div>
+          <div className="grid md:grid-cols-3 gap-5">
+            {[
+              {
+                title: "5 Ways Small Businesses in Atlanta Can Use AI to Save 20+ Hours a Week",
+                slug: "ai-save-20-hours-week",
+                date: "2026-04-02",
+                readTime: "5 min read",
+              },
+              {
+                title: "Why Your Business Needs a Custom Website (Not a Wix Template)",
+                slug: "custom-website-not-template",
+                date: "2026-03-20",
+                readTime: "4 min read",
+              },
+              {
+                title: "The ROI of Sales Automation: What We Learned Building Outreach Systems",
+                slug: "roi-sales-automation",
+                date: "2026-03-05",
+                readTime: "5 min read",
+              },
+            ].map((post) => (
+              <Link
+                key={post.slug}
+                href={`/blog/${post.slug}`}
+                className="bg-[var(--card)] border border-[var(--card-border)] rounded-xl p-5 hover:bg-[var(--card-hover)] transition-all duration-300 group block"
+              >
+                <div className="text-xs text-zinc-500 mb-2">
+                  {post.date} &middot; {post.readTime}
+                </div>
+                <h3 className="text-sm font-semibold text-[var(--foreground)] group-hover:text-blue-400 transition-colors leading-snug">
+                  {post.title}
+                </h3>
+              </Link>
+            ))}
+          </div>
+          <div className="text-center mt-8">
+            <Link
+              href="/blog"
+              className="text-sm text-blue-500 hover:text-blue-400 transition-colors"
+            >
+              View all posts &rarr;
+            </Link>
           </div>
         </div>
       </section>
