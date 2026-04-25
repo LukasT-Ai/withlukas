@@ -13,10 +13,29 @@ type Project = {
   tags: string[];
   status: "live" | "active" | "beta" | "coming-soon";
   link?: string;
+  externalLink?: string;
   highlights: string[];
+  featured?: boolean;
 };
 
 const projects: Project[] = [
+  {
+    name: "Ascend Trading Agent",
+    tagline: "Autonomous prediction market trader",
+    description:
+      "Fully autonomous trading agent for Ascend Market — event perpetuals on Cardano. Evaluates 21+ prediction markets using 14 independent data sources, enters and exits positions automatically with portfolio-percentage sizing, and runs 24/7 with Telegram control.",
+    category: "Trading & Finance",
+    tags: ["Node.js", "14 Data Sources", "Cardano", "Telegram Bot", "AI Trading"],
+    status: "live",
+    externalLink: "https://ascendmarket.xyz",
+    featured: true,
+    highlights: [
+      "14-source evaluation engine: Coinbase, Binance, Pyth, Polymarket, Kalshi, ESPN, FRED, and 7 more",
+      "Portfolio-percentage sizing scales with account balance, edge strength, and confidence",
+      "Smart risk engine: trailing stops, edge-flip exits, market expiry detection, scale-into-winners",
+      "Win rate feedback loop auto-tunes strategy thresholds after 10+ trades per profile",
+    ],
+  },
   {
     name: "Spectrum Outreach",
     tagline: "B2B email outreach on autopilot",
@@ -149,7 +168,7 @@ const projects: Project[] = [
   },
 ];
 
-const categories = ["All", "Sales Tools", "Web & App Development", "SEO & Web", "Workflow Automation"];
+const categories = ["All", "Trading & Finance", "Sales Tools", "Web & App Development", "SEO & Web", "Workflow Automation"];
 
 /* --- Status Badge --- */
 
@@ -171,11 +190,24 @@ function StatusBadge({ status }: { status: Project["status"] }) {
 /* --- Project Card --- */
 
 function ProjectCard({ project }: { project: Project }) {
+  const isFeatured = project.featured;
+  const visitLink = project.link || project.externalLink;
   return (
-    <div className="group relative bg-[var(--card)] border border-[var(--card-border)] rounded-2xl p-6 transition-all duration-300 hover:bg-[var(--card-hover)] glow">
+    <div className={`group relative rounded-2xl p-6 transition-all duration-300 ${
+      isFeatured
+        ? "md:col-span-2 bg-gradient-to-br from-blue-950/40 via-[var(--card)] to-purple-950/30 border border-blue-500/30 hover:border-blue-500/50"
+        : "bg-[var(--card)] border border-[var(--card-border)] hover:bg-[var(--card-hover)] glow"
+    }`}>
+      {isFeatured && (
+        <div className="absolute top-0 right-0 bg-gradient-to-l from-blue-500 to-purple-500 text-white text-[10px] font-bold uppercase tracking-widest px-4 py-1 rounded-bl-xl rounded-tr-2xl">
+          Featured
+        </div>
+      )}
       <div className="flex items-start justify-between mb-3">
         <div>
-          <h3 className="text-lg font-semibold text-[var(--foreground)] group-hover:text-blue-400 transition-colors">
+          <h3 className={`font-semibold text-[var(--foreground)] transition-colors ${
+            isFeatured ? "text-xl group-hover:text-blue-400" : "text-lg group-hover:text-blue-400"
+          }`}>
             {project.name}
           </h3>
           <p className="text-sm text-zinc-500">{project.tagline}</p>
@@ -183,14 +215,14 @@ function ProjectCard({ project }: { project: Project }) {
         <StatusBadge status={project.status} />
       </div>
 
-      <p className="text-sm text-zinc-400 leading-relaxed mb-4">
+      <p className={`text-zinc-400 leading-relaxed mb-4 ${isFeatured ? "text-sm md:text-base" : "text-sm"}`}>
         {project.description}
       </p>
 
-      <ul className="space-y-1.5 mb-4">
+      <ul className={`mb-4 ${isFeatured ? "grid md:grid-cols-2 gap-2" : "space-y-1.5"}`}>
         {project.highlights.map((h, i) => (
           <li key={i} className="text-xs text-zinc-500 flex items-start gap-2">
-            <span className="text-blue-500 mt-0.5 shrink-0">&#9656;</span>
+            <span className={`mt-0.5 shrink-0 ${isFeatured ? "text-purple-400" : "text-blue-500"}`}>&#9656;</span>
             {h}
           </li>
         ))}
@@ -199,19 +231,23 @@ function ProjectCard({ project }: { project: Project }) {
       <div className="flex items-center justify-between">
         <div className="flex flex-wrap gap-1.5">
           {project.tags.map((tag) => (
-            <span key={tag} className="text-[10px] text-zinc-500 bg-zinc-800/50 px-2 py-0.5 rounded">
+            <span key={tag} className={`text-[10px] px-2 py-0.5 rounded ${
+              isFeatured ? "text-blue-300/70 bg-blue-500/10 border border-blue-500/10" : "text-zinc-500 bg-zinc-800/50"
+            }`}>
               {tag}
             </span>
           ))}
         </div>
-        {project.link && (
+        {visitLink && (
           <a
-            href={project.link}
+            href={visitLink}
             target="_blank"
             rel="noopener noreferrer"
-            className="text-xs text-blue-500 hover:text-blue-400 transition-colors"
+            className={`text-xs transition-colors ${
+              isFeatured ? "text-purple-400 hover:text-purple-300 font-medium" : "text-blue-500 hover:text-blue-400"
+            }`}
           >
-            Visit &rarr;
+            {project.externalLink ? "Ascend Market" : "Visit"} &rarr;
           </a>
         )}
       </div>
@@ -428,7 +464,7 @@ export default function Home() {
       {/* Stats */}
       <section className="py-12 px-6 border-y border-[var(--card-border)]">
         <div className="max-w-4xl mx-auto grid grid-cols-2 md:grid-cols-4 gap-8">
-          <StatCard value="9+" label="Tools Built" />
+          <StatCard value="10+" label="Tools Built" />
           <StatCard value="18+" label="Data Sources" />
           <StatCard value="1000s" label="Hours Saved" />
           <StatCard value="2" label="Countries" />
