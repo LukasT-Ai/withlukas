@@ -27,7 +27,7 @@ const projects: Project[] = [
     category: "Trading & Finance",
     tags: ["Node.js", "14 Data Sources", "Cardano", "Telegram Bot", "AI Trading"],
     status: "live",
-    externalLink: "https://ascendmarket.xyz",
+    externalLink: "https://www.ascend.market/",
     featured: true,
     highlights: [
       "14-source evaluation engine: Coinbase, Binance, Pyth, Polymarket, Kalshi, ESPN, FRED, and 7 more",
