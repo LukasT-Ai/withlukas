@@ -35,7 +35,7 @@ export const projects: Project[] = [
     description:
       "Fully autonomous trading agent for Ascend Market — event perpetuals on Cardano. Evaluates 21+ prediction markets using 14 independent data sources, enters and exits positions automatically with portfolio-percentage sizing, and runs 24/7 with Telegram control.",
     category: "Trading & Finance",
-    tags: ["Node.js", "14 Data Sources", "Cardano", "Telegram Bot", "AI Trading"],
+    tags: ["Masumi Network", "Midnight Network", "Cardano", "14 Data Sources", "AI Trading"],
     status: "live",
     externalLink: "https://www.ascend.market/",
     featured: true,
@@ -89,10 +89,11 @@ export const projects: Project[] = [
         { value: "10s", label: "Scan Interval" },
       ],
       techStack: [
+        { name: "Masumi Network", role: "Decentralized AI agent payment and registry layer" },
+        { name: "Midnight Network", role: "Privacy-preserving smart contracts on Cardano" },
         { name: "Node.js (ESM)", role: "Runtime and core agent logic" },
         { name: "SQLite", role: "Trade journal, evaluations, sentiment history" },
         { name: "Telegram Bot API", role: "Remote control, alerts, and veto system" },
-        { name: "PM2", role: "Process management and auto-restart" },
         { name: "Pyth Network", role: "Oracle prices for stocks and commodities" },
         { name: "Polymarket + Kalshi", role: "Prediction market consensus pricing" },
       ],
