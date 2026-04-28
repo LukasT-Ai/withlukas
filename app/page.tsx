@@ -2,173 +2,7 @@ import Link from "next/link";
 import Navbar from "./components/navbar";
 import Footer from "./components/footer";
 import ContactForm from "./components/contact-form";
-
-/* --- Project Data --- */
-
-type Project = {
-  name: string;
-  tagline: string;
-  description: string;
-  category: string;
-  tags: string[];
-  status: "live" | "active" | "beta" | "coming-soon";
-  link?: string;
-  externalLink?: string;
-  highlights: string[];
-  featured?: boolean;
-};
-
-const projects: Project[] = [
-  {
-    name: "Ascend Trading Agent",
-    tagline: "Autonomous prediction market trader",
-    description:
-      "Fully autonomous trading agent for Ascend Market — event perpetuals on Cardano. Evaluates 21+ prediction markets using 14 independent data sources, enters and exits positions automatically with portfolio-percentage sizing, and runs 24/7 with Telegram control.",
-    category: "Trading & Finance",
-    tags: ["Node.js", "14 Data Sources", "Cardano", "Telegram Bot", "AI Trading"],
-    status: "live",
-    externalLink: "https://www.ascend.market/",
-    featured: true,
-    highlights: [
-      "14-source evaluation engine: Coinbase, Binance, Pyth, Polymarket, Kalshi, ESPN, FRED, and 7 more",
-      "Portfolio-percentage sizing scales with account balance, edge strength, and confidence",
-      "Smart risk engine: trailing stops, edge-flip exits, market expiry detection, scale-into-winners",
-      "Win rate feedback loop auto-tunes strategy thresholds after 10+ trades per profile",
-    ],
-  },
-  {
-    name: "Spectrum Outreach",
-    tagline: "B2B email outreach on autopilot",
-    description:
-      "End-to-end prospecting automation for Spectrum Business Services. AI-powered response classification, automated follow-ups, and a 12-tab management dashboard — all with zero per-email AI cost.",
-    category: "Sales Tools",
-    tags: ["Email Automation", "AI Classification", "CRM", "Node.js"],
-    status: "live",
-    link: "https://spectrumoutreach.withlukas.com",
-    highlights: [
-      "Rule-based classifier handles MEETING_REQUEST, OBJECTION, HARD_NO, and AUTO_REPLY",
-      "4-stage follow-up cadence with listening window logic",
-      "12-tab Railway-hosted dashboard with real-time analytics",
-    ],
-  },
-  {
-    name: "Career Ops",
-    tagline: "AI-powered job search engine",
-    description:
-      "Multi-profile job search automation that scans 18+ sources, evaluates fit with AI scoring, generates tailored CVs, and auto-applies via Greenhouse and Lever APIs. Built for the US and German job markets.",
-    category: "Web & App Development",
-    tags: ["AI/ML", "Job Search", "PDF Generation", "Multi-Profile"],
-    status: "live",
-    highlights: [
-      "Scans Bundesagentur, USAJobs, LinkedIn, Indeed, StepStone, and 12+ more",
-      "Auto-apply engine with Greenhouse API + Lever Playwright integration",
-      "Interactive mobile dashboard accessible from anywhere via Tailscale",
-    ],
-  },
-  {
-    name: "Performance Tracker",
-    tagline: "Manager dashboard in under 3 minutes",
-    description:
-      "Automated Excel/VBA workbook for rep performance scoring and sales forecasting. Imports manager reports, calculates activity + funnel + attainment scores, and produces instant visual dashboards.",
-    category: "Sales Tools",
-    tags: ["VBA", "Excel", "Sales Analytics", "Forecasting"],
-    status: "live",
-    highlights: [
-      "Activity (50%) + Funnel (25%) + Attainment (25%) composite scoring",
-      "38-sheet workbook with fiscal month cycle (29th-28th)",
-      "Forms pipeline: Microsoft Forms to Power Automate to auto-import",
-    ],
-  },
-  {
-    name: "RnG Daytrader",
-    tagline: "Algorithmic crypto trading bot",
-    description:
-      "Technical analysis trading bot for Coinbase Advanced Trade. Uses EMA crossover strategy with RSI confirmation and ATR-based position sizing. Max 3x leverage, 1% risk per trade.",
-    category: "Web & App Development",
-    tags: ["TypeScript", "Crypto", "Trading", "Technical Analysis"],
-    status: "beta",
-    highlights: [
-      "EMA(9/21/50) + RSI + ATR strategy with automated execution",
-      "SQLite trade journal with full performance analytics",
-      "Risk management: position sizing, stop-loss, and drawdown limits",
-    ],
-  },
-  {
-    name: "RNGcrypto",
-    tagline: "Trading performance dashboard",
-    description:
-      "Real-time web dashboard for the RnG Daytrader bot. Dark-mode interface with live P&L, trade history, and strategy performance metrics. Reads directly from the bot's SQLite database.",
-    category: "Web & App Development",
-    tags: ["Next.js", "React", "SQLite", "Data Visualization"],
-    status: "beta",
-    link: "https://rngcrypto.com",
-    highlights: [
-      "Live trade feed with entry/exit visualization",
-      "Performance metrics: win rate, Sharpe ratio, max drawdown",
-      "Dark-mode design with neon accent palette",
-    ],
-  },
-  {
-    name: "Seller Outreach Tool",
-    tagline: "Batch email for sales teams",
-    description:
-      "Excel/VBA-based batch email outreach tool designed for distribution to sales teams. One-click email campaigns with template management, recipient lists, and send tracking.",
-    category: "Sales Tools",
-    tags: ["VBA", "Excel", "Email", "Sales Enablement"],
-    status: "live",
-    highlights: [
-      "Plug-and-play .xlsm file — no setup or IT involvement",
-      "Template library with merge fields and preview",
-      "Built for non-technical reps — zero learning curve",
-    ],
-  },
-  {
-    name: "Dr. Paulina Kaiser",
-    tagline: "Professional medical web presence",
-    description:
-      "Bilingual (EN/DE) professional website for a physician. Full technical SEO, referral forms, blog system, structured data, and Vercel hosting. Built with Next.js and Tailwind.",
-    category: "SEO & Web",
-    tags: ["Next.js", "SEO", "Bilingual", "Healthcare"],
-    status: "live",
-    link: "https://paulinakaiser.com",
-    highlights: [
-      "Complete SEO: sitemap, robots, JSON-LD schemas, OG images, 301 redirects",
-      "Resend email integration for referral form routing",
-      "Blog with SVG gradient cover images in English and German",
-    ],
-  },
-  {
-    name: "withlukas.com",
-    tagline: "This site — SEO-first portfolio",
-    description:
-      "Dark-mode portfolio and services site with full technical SEO. Dynamic OG image generation, JSON-LD structured data, sitemap, and optimized metadata. Deployed on Vercel with custom domain.",
-    category: "SEO & Web",
-    tags: ["Next.js", "SEO", "JSON-LD", "OG Images"],
-    status: "live",
-    link: "https://withlukas.com",
-    highlights: [
-      "Dynamic OG image generation via Next.js ImageResponse",
-      "JSON-LD graph: Organization, WebSite, WebPage, ProfessionalService",
-      "Automatic sitemap.xml and robots.txt generation",
-    ],
-  },
-  {
-    name: "Smart Intake Pipeline",
-    tagline: "Forms to workflow, automatically",
-    description:
-      "Microsoft Forms to Power Automate to Excel pipeline that captures field data and routes it into automated scoring and reporting workflows. Zero-touch data entry for managers.",
-    category: "Workflow Automation",
-    tags: ["Power Automate", "Microsoft Forms", "Excel", "Automation"],
-    status: "live",
-    highlights: [
-      "Form submissions auto-land in OneDrive Excel workbook",
-      "VBA macro imports and validates on demand",
-      "Eliminates manual data entry across the team",
-    ],
-  },
-];
-
-const categories = ["All", "Trading & Finance", "Sales Tools", "Web & App Development", "SEO & Web", "Workflow Automation"];
+import { projects, categories, type Project } from "./projects/data";
 
 /* --- Status Badge --- */
 
@@ -191,9 +25,8 @@ function StatusBadge({ status }: { status: Project["status"] }) {
 
 function ProjectCard({ project }: { project: Project }) {
   const isFeatured = project.featured;
-  const visitLink = project.link || project.externalLink;
   return (
-    <div className={`group relative rounded-2xl p-6 transition-all duration-300 ${
+    <Link href={`/projects/${project.slug}`} className={`group relative rounded-2xl p-6 transition-all duration-300 block cursor-pointer ${
       isFeatured
         ? "md:col-span-2 bg-gradient-to-br from-blue-950/40 via-[var(--card)] to-purple-950/30 border border-blue-500/30 hover:border-blue-500/50"
         : "bg-[var(--card)] border border-[var(--card-border)] hover:bg-[var(--card-hover)] glow"
@@ -238,20 +71,13 @@ function ProjectCard({ project }: { project: Project }) {
             </span>
           ))}
         </div>
-        {visitLink && (
-          <a
-            href={visitLink}
-            target="_blank"
-            rel="noopener noreferrer"
-            className={`text-xs transition-colors ${
-              isFeatured ? "text-purple-400 hover:text-purple-300 font-medium" : "text-blue-500 hover:text-blue-400"
-            }`}
-          >
-            {project.externalLink ? "Ascend Market" : "Visit"} &rarr;
-          </a>
-        )}
+        <span className={`text-xs transition-colors ${
+          isFeatured ? "text-purple-400 group-hover:text-purple-300 font-medium" : "text-blue-500 group-hover:text-blue-400"
+        }`}>
+          View details &rarr;
+        </span>
       </div>
-    </div>
+    </Link>
   );
 }
 

@@ -1,5 +1,6 @@
 import type { MetadataRoute } from "next";
 import { posts } from "./blog/posts";
+import { projects } from "./projects/data";
 
 export default function sitemap(): MetadataRoute.Sitemap {
   const services = [
@@ -51,5 +52,11 @@ export default function sitemap(): MetadataRoute.Sitemap {
       priority: 0.8,
     })),
     ...blogEntries,
+    ...projects.map((p) => ({
+      url: `https://www.withlukas.com/projects/${p.slug}`,
+      lastModified: new Date(),
+      changeFrequency: "monthly" as const,
+      priority: 0.7,
+    })),
   ];
 }
