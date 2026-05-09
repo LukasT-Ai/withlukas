@@ -747,7 +747,7 @@ export const projects: Project[] = [
     tags: ["Next.js", "Recharts", "PDF Parsing", "Analytics"],
     status: "live",
     externalLink:
-      "https://vivacious-adaptation-production-ec4c.up.railway.app/landing",
+      "https://vivacious-adaptation-production-ec4c.up.railway.app/",
     highlights: [
       "PDF and CSV import: Fidelity, Bank of America, Venmo, PayPal",
       "100+ auto-categorization rules for merchants, subscriptions, and recurring charges",
