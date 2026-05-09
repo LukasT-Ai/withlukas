@@ -738,6 +738,86 @@ export const projects: Project[] = [
     },
   },
   {
+    slug: "finance-withlukas",
+    name: "Finance WithLukas",
+    tagline: "Private financial intelligence dashboard",
+    description:
+      "Invite-only personal finance dashboard. Import bank statements from Fidelity, Bank of America, and more. Automatic merchant recognition, spending analytics, income tracking, portfolio monitoring, and calendar heat maps.",
+    category: "Trading & Finance",
+    tags: ["Next.js", "Recharts", "PDF Parsing", "Analytics"],
+    status: "live",
+    externalLink:
+      "https://vivacious-adaptation-production-ec4c.up.railway.app/landing",
+    highlights: [
+      "PDF and CSV import: Fidelity, Bank of America, Venmo, PayPal",
+      "100+ auto-categorization rules for merchants, subscriptions, and recurring charges",
+      "9-tab dashboard: Overview, Income, Portfolio, Categories, Merchants, Venmo, Insights, Calendar, Transactions",
+      "Multi-profile support with invite-only registration and role-based access",
+    ],
+    detail: {
+      problem:
+        "Bank apps show transactions but not the full picture. You can't see spending trends across accounts, compare year-over-year income, track portfolio performance, or identify recurring charges — all in one place. Existing tools like Mint require linking bank credentials, creating privacy and security risks.",
+      solution:
+        "A self-hosted, invite-only dashboard that works from PDF and CSV bank statement imports — no credential linking required. Automatic merchant normalization, category assignment, and deep analytics across spending, income, investments, and Venmo activity.",
+      architecture: [
+        {
+          title: "Statement Import Engine",
+          description:
+            "Parses PDF bank statements from Fidelity (deposits, withdrawals, debit card activity) and Bank of America. Also handles Fidelity CSV portfolio snapshots with holdings and cost basis data.",
+        },
+        {
+          title: "Merchant Normalization",
+          description:
+            "100+ regex rules map raw bank descriptions to clean merchant names and categories. Handles variants like 'AMZN MKTP US' → 'Amazon' and 'VENMO*Maren T' → 'Venmo → Maren'. Runs after every import.",
+        },
+        {
+          title: "Analytics Engine",
+          description:
+            "Server-side aggregation computes category breakdowns, monthly trends, merchant rankings, recurring charge detection, income source analysis, and portfolio performance metrics.",
+        },
+        {
+          title: "Multi-Profile Access Control",
+          description:
+            "JWT-based authentication with invite codes. Admin users manage profiles and access. Each profile's data is fully isolated — switch between profiles in the header dropdown.",
+        },
+      ],
+      stats: [
+        { value: "9", label: "Dashboard Tabs" },
+        { value: "100+", label: "Merchant Rules" },
+        { value: "4", label: "Bank Formats" },
+        { value: "24mo+", label: "History Depth" },
+      ],
+      techStack: [
+        { name: "Next.js 15", role: "Full-stack framework" },
+        { name: "Recharts", role: "Interactive data visualization" },
+        { name: "pdf-parse", role: "Bank statement extraction" },
+        { name: "Railway", role: "Hosting with persistent volume" },
+      ],
+      features: [
+        {
+          title: "No Credential Linking",
+          description:
+            "Import PDF and CSV bank statements directly. Your banking credentials never leave your bank. Upload statements, get analytics.",
+        },
+        {
+          title: "Spending Calendar",
+          description:
+            "Visual daily spending heat map showing exactly how much you spent each day. Color intensity maps to spend amount for instant pattern recognition.",
+        },
+        {
+          title: "Portfolio Tracking",
+          description:
+            "Monthly investment snapshots with holdings breakdown, cost basis, dividends, interest earned, and month-over-month performance charts.",
+        },
+        {
+          title: "Venmo Analytics",
+          description:
+            "Dedicated Venmo tab consolidating all peer-to-peer transactions by recipient. See who you send money to most and track payment patterns.",
+        },
+      ],
+    },
+  },
+  {
     slug: "smart-intake-pipeline",
     name: "Smart Intake Pipeline",
     tagline: "Forms to workflow, automatically",
